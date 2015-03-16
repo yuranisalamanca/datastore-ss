@@ -4,8 +4,8 @@
 }
 body {
 	width: 960px;
-	margin: 0 auto;
 	font-family: Arial, Verdana, Helvetica;
+	margin: 0 auto;
 	/*background-color: #F0F0F0;*/
 	background-color: rgba(133, 167, 150, 0.2);
 	/**background: linear-gradient(to right,  rgba(133, 167, 150, 0.2),  rgba(133, 167, 150, 0.6));*/
@@ -42,10 +42,10 @@ body {
 	height: 255px;
 	background: #F7F7F7;
 	width: 50%;
-	margin: 0 auto;
 	box-shadow: 7px 7px 7px rgba(0, 0 , 0 , 0.3);
 	margin-top: 40px;
 	border-radius: 10px;
+	margin: 0 auto;
 }
 
 legend {
@@ -54,6 +54,8 @@ legend {
 	font-size: 18px;
 	font-style: italic;
 	color: #036975;
+	display: block;
+	
 }
 .titulo{
 	text-align: center;
@@ -88,6 +90,7 @@ fieldset {
 
 .cuerpo{
 	margin-bottom: 150px;
+	margin-top: 40px;
 }
 .footerbarra, .barraCuenta{
 	background-color: rgba(133, 167, 150, 0.3);
