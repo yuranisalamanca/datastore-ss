@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2015 a las 06:22:03
+-- Tiempo de generación: 17-03-2015 a las 17:27:15
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.5.19
 
@@ -28,17 +28,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `users` (
 `idusers` int(11) NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  `apellido` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `usuario` varchar(45) DEFAULT NULL,
-  `contraseña` varchar(45) DEFAULT NULL,
-  `email_dropbox` varchar(45) DEFAULT NULL,
-  `contrasenia_dropbox` varchar(45) DEFAULT NULL,
-  `email_drive` varchar(45) DEFAULT NULL,
-  `contrasenia_drive` varchar(45) DEFAULT NULL,
-  `email_mega` varchar(45) DEFAULT NULL,
-  `contrasenia_mega` varchar(45) DEFAULT NULL
+  `nombre` varchar(45) NOT NULL,
+  `apellido` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `contraseña` varchar(45) NOT NULL,
+  `email_dropbox` varchar(45) NOT NULL,
+  `contrasenia_dropbox` varchar(45) NOT NULL,
+  `clave_dropbox` varchar(55) DEFAULT NULL,
+  `email_drive` varchar(45) NOT NULL,
+  `contrasenia_drive` varchar(45) NOT NULL,
+  `clave_drive` varchar(55) DEFAULT NULL,
+  `email_mega` varchar(45) NOT NULL,
+  `contrasenia_mega` varchar(45) NOT NULL,
+  `clave_mega` varchar(55) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

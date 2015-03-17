@@ -1,5 +1,5 @@
 <?php 
-	require_once "dropbox-sdk/Dropbox/autoload.php";
+	require_once "Dropbox/autoload.php";
 	use \Dropbox as dbx;
 
 $appInfo = dbx\AppInfo::loadFromJsonFile("app-info.json");
@@ -12,22 +12,24 @@ echo "1. Go to: " . $authorizeUrl . "\n";
 //$authCode = \trim(\readline("Enter the authorization code here: "));
 
 /* curl_init(): inicializar una sesión cURL*/
-$ch = curl_init($authorizeUrl);
+//header("Location: ".$authorizeUrl);
+
+/*$ch = curl_init($authorizeUrl);
 $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
 // add useragent 
 
-/*curl_setopt — Configura una opción para una transferencia cURL*/
+/*curl_setopt — Configura una opción para una transferencia cURL
 curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
-/* CURLOPT_RETURNTRANSFER retorna la transferencia como un string */
+/* CURLOPT_RETURNTRANSFER retorna la transferencia como un string
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-/*curl_exec — Establece una sesión cURL*/
+/*curl_exec — Establece una sesión cURL
 $output = curl_exec($ch);
+*/
 
-
-list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAOz9Ig5IyhX9nVmEuCVG1xMhU");
+list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAO088TfcbuNOVAzwTC_kulC8s");
 print "Access Token: " . $accessToken . "\n";
 
-$dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
+$dbxClient = new dbx\Client($accessToken, "Datastoress");
 $accountInfo = $dbxClient->getAccountInfo();
 print_r($accountInfo);
 ?>
