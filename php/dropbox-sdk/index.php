@@ -12,7 +12,7 @@ echo "1. Go to: " . $authorizeUrl . "\n";
 //$authCode = \trim(\readline("Enter the authorization code here: "));
 
 /* curl_init(): inicializar una sesión cURL*/
-//header("Location: ".$authorizeUrl);
+header("Location: ".$authorizeUrl);
 
 /*$ch = curl_init($authorizeUrl);
 $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
@@ -26,7 +26,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $output = curl_exec($ch);
 */
 
-list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAO088TfcbuNOVAzwTC_kulC8s");
+list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAO1xYxpMu2NKBTfJQzYX2r_ec");
 print "Access Token: " . $accessToken . "\n";
 
 $dbxClient = new dbx\Client($accessToken, "Datastoress");
