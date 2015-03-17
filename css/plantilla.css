@@ -54,7 +54,7 @@ legend {
 	font-size: 18px;
 	font-style: italic;
 	color: #036975;
-	display: block;
+	text-align: center;
 	
 }
 .titulo{
@@ -69,6 +69,8 @@ fieldset {
 	margin-bottom: 10px;
 	text-align: center;
 	border-radius: 10px;
+	border: 2px groove (internal value);
+
 }
 .forgotpassword, .registrar{
 	font-size: 13px;
@@ -148,7 +150,7 @@ fieldset {
 	box-shadow: 7px 7px 7px rgba(0, 0 , 0 , 0.3);
 	border-radius: 10px;
 	background: #F7F7F7;
-	height: 880px;
+	height: 895px;
 	margin-bottom: 150px;
 }
 .cuerpoCuenta{
