@@ -24,7 +24,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $output = curl_exec($ch);
 
 
-list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAOzcdHxehMMLSNhYZFNc21vFs");
+list($accessToken, $dropboxUserId) = $webAuth->finish("5hHUtrKVeowAAAAAAAAOz9Ig5IyhX9nVmEuCVG1xMhU");
 print "Access Token: " . $accessToken . "\n";
 
 $dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
