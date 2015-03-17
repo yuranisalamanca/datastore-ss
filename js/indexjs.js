@@ -1,3 +1,4 @@
+
 function cambiarTab(tabs,tabActual){
 	//id del tab actual (tab2)
 	tabActual=document.getElementById(tabActual.id);

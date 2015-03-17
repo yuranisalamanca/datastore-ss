@@ -91,7 +91,7 @@ fieldset {
 }
 
 .cuerpo{
-	margin-bottom: 150px;
+	margin-bottom: 25px;
 	margin-top: 40px;
 }
 .footerbarra, .barraCuenta{
@@ -151,7 +151,7 @@ fieldset {
 	border-radius: 10px;
 	background: #F7F7F7;
 	height: 895px;
-	margin-bottom: 150px;
+	margin-bottom: 75px;
 }
 .cuerpoCuenta{
 	margin-top: 40px;
@@ -233,6 +233,7 @@ fieldset {
     float: left;
     text-align: center;
     margin: 0px 2px -2px -0px;
+    /*Color pestaña deseleccionada*/
     background: #D6D3B0;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -241,6 +242,7 @@ fieldset {
 }
 #pestanas a:link{
     text-decoration: none;
+    /*Color letra*/
     color: #036975;
 }
  
@@ -260,7 +262,6 @@ fieldset {
 .imagen {
 	width: 90%;
 	margin: 0 auto;
-	box-shadow: 7px 7px 7px rgba(0, 0 , 0 , 0.3);
 }
 
 .imagen img {

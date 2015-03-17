@@ -28,6 +28,7 @@ function cambiarPestanna(pestannas,pestanna) {
         // borde superior del contenido que esta juesto debajo y se vea de este 
         // modo que esta seleccionada.
         $(cpestanna).css('display','');
+        //Color Background pestaña seleccionada
         $(pestanna).css('background','dimgray');
         $(pestanna).css('padding-bottom','2px'); 
     });
