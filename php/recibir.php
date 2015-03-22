@@ -8,7 +8,7 @@ print_r($_GET["code"]);
 
 $codigo = trim($_GET["code"]."");
 
-list($accessToken, $dropboxUserId) = $webAuth->finish($codigo);
+list($accessToken, $dropboxUserId) = $webAuth->finish($codigo."");
 print "Access Token: " . $accessToken . "\n";
 
 $dbxClient = new dbx\Client($accessToken, "Datastoress");

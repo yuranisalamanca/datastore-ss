@@ -2,26 +2,34 @@
 <html>
 	<head>
 		<title>Gestor de Archivos Multiplataforma</title>
-		<link rel="stylesheet" type="text/css" href="css/plantilla.css">
-		<script src="js/vendor/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="js/cambiarPestanna.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/plantilla.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<script src="../js/vendor/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
 	</head>
 	<body>
 		<header class="tituloheader">
 			<div class="barracolores"></div>
-			<img class="titulobarra" src="img/titulos4.png">
+			<img class="titulobarra" src="../img/titulos4.png">
 			<div class="barracolores"></div>			
 		</header>
 		<div class="barraCuenta">
 			<nav class="bienvenidobarra">
-				<a href="">Bienvenido: </a>
+				<a href="">Bienvenido: 
+					<?php SESSION_START(); 
+					if($_SESSION==null){
+						echo '';
+					}else{
+						echo $_SESSION['nombre'] . " " . $_SESSION['apellido'];
+					}
+				?></a>
 			</nav>
 			<ul class="listabarraprincipal">
-				<li><a href="">Cerrar Sesi&oacute;n</a></li>
+				<li><a href="../php/logout.php">Cerrar Sesi&oacute;n</a></li>
 			</ul>	
 		</div>
 		<div class="imagen">
-				<img src="img/logo2.png">
+				<img src="../img/logo2.png">
 			</div>
 		<div class="contenido">	
 			<div id="pestanas">

@@ -10,7 +10,7 @@ $authorizeUrl = $webAuth->start();
 //echo "2. Click \"Allow\" (you might have to log in first).\n";
 //echo "3. Copy the authorization code.\n";
 //$authCode = \trim(\readline("Enter the authorization code here: "));
-$authorizeUrl = $authorizeUrl."&redirect_uri=http://localhost/Datastoress/php/recibir.php";
+$authorizeUrl = $authorizeUrl."&redirect_uri=http://localhost:8090/Datastoress/php/recibir.php";
 //$authorizeUrl = $authorizeUrl;
 header("Location: ".$authorizeUrl);
 /*
