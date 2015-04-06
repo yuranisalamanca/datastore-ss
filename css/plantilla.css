@@ -54,9 +54,8 @@ legend {
 	font-size: 18px;
 	font-style: italic;
 	color: #036975;
-	text-align: center;
-	
 }
+
 .titulo{
 	text-align: center;
 	color: #036975;
@@ -292,4 +291,115 @@ fieldset {
 }
 .bienvenidobarra a{
 	margin-left: 20px;
+}
+
+
+/*Tablet*/
+@media only screen and (min-width:768px)  and (max-width:1024px) {
+/* Styles */
+
+	body{
+        width: 100%;
+    }
+    
+    .tituloheader {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+
+    .footerIndex {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+
+    .contenidotabs .ctab2 h5 {
+    	display: block;
+    }
+
+    .cuerpo {
+    	margin-top: 20px;
+    }
+}
+
+/*Smartphone horizontal*/
+@media only screen and (min-width : 321px) and (max-width: 767px) {
+/* Styles */
+    
+  body{
+        width: 100%;
+    }
+    
+    .tituloheader {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+
+    .footerIndex {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+
+    .contenidotabs .ctab2 h5 {
+    	display: block;
+    }
+
+    .cuerpo {
+    	margin-top: 20px;
+    }
+
+    .formulario {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+
+    .titulobarra {
+    	width: 90%;
+    }
+}
+
+/*Smartphone Vertical*/
+@media only screen and (max-width : 320px) {
+/* Styles */
+    body{
+        width: 100%;
+    }
+    
+    .tituloheader {
+    	width: 95%;
+    	margin: 0 auto;
+    }
+
+    .footerIndex {
+    	width: 95%;
+    	margin: 0 auto;
+    }
+
+    .contenidotabs .ctab2 h5 {
+    	display: block;
+    }
+
+    .cuerpo {
+    	margin-top: 20px;
+    }
+
+    .formulario {
+    	width: 95%;
+    	margin: 0 auto;
+    }
+
+    .titulobarra {
+    	width: 95%;
+    }
+
+    .label {
+    	width: 90%;
+    }
+
+    .button {
+    	width: 90%;
+    }
+
+    legend {
+    	font-size: 14px;
+    }
 }

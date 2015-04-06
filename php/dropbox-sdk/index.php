@@ -2,9 +2,13 @@
 	require_once "Dropbox/autoload.php";
 	use \Dropbox as dbx;
 
-$appInfo = dbx\AppInfo::loadFromJsonFile("app-info.json");
+$appInfo = dbx\AppInfo::loadFromJsonFile("./app-info.json");
 $webAuth = new dbx\WebAuthNoRedirect($appInfo, "Datastoress");
 $authorizeUrl = $webAuth->start();
+
+SESSION_START();
+$_SESSION['appInfo']= $appInfo;
+$_SESSION['webAuth']= $webAuth;
 
 //echo "1. Go to: " . $authorizeUrl . "\n";
 //echo "2. Click \"Allow\" (you might have to log in first).\n";

@@ -2,11 +2,15 @@
 require_once "dropbox-sdk/Dropbox/autoload.php";
 use \Dropbox as dbx;
 
-$appInfo = dbx\AppInfo::loadFromJsonFile("dropbox-sdk/app-info.json");
-$webAuth = new dbx\WebAuthNoRedirect($appInfo, "Datastoress");
+//use \Dropbox as dbx;
+SESSION_START();
+$appInfo = $_SESSION['appInfo'];
+$webAuth = $_SESSION['webAuth'];
+//$appInfo = dbx\AppInfo::loadFromJsonFile("dropbox-sdk/app-info.json");
+//$webAuth = new dbx\WebAuthNoRedirect($appInfo, "Datastoress");
 print_r($_GET["code"]);
 
-$codigo = trim($_GET["code"]."");
+$codigo = $_GET["code"]."";
 
 list($accessToken, $dropboxUserId) = $webAuth->finish($codigo."");
 print "Access Token: " . $accessToken . "\n";
