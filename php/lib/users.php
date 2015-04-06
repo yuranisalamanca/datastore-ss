@@ -28,6 +28,7 @@
 					$_SESSION['clavedropbox'] = $fila['clave_dropbox'];
 					$_SESSION['clavedrive'] = $fila['clave_drive'];
 					$_SESSION['clavemega'] = $fila['clave_mega'];
+					echo $fila['nombre'];
 				}	
 				return true;						
 			}
