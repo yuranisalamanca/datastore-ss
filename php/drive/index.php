@@ -15,6 +15,7 @@ if (isset($_GET['code'])) {
 } elseif (!isset($_SESSION['accessToken'])) {
     $client->authenticate();
 }
+
 $files= array();
 $dir = dir('files');
 while ($file = $dir->read()) {
@@ -45,4 +46,4 @@ if (!empty($_POST)) {
     finfo_close($finfo);
     header('location:'.$url);exit;
 }
-include 'index.html';
+include 'main.php';
