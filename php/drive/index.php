@@ -12,14 +12,14 @@ $client->setRedirectUri($url);
 $client->setScopes(array('https://www.googleapis.com/auth/drive'));
 
 if (isset($_GET['code'])) {
-    print_r($_GET['code']);
+    //print_r($_GET['code']);
     $_SESSION['accessToken'] = $client->authenticate($_GET['code']);
 //    header('location:'.$url);exit;
 } elseif (!isset($_SESSION['accessToken'])) {
     $client->authenticate();
 }
 
-print_r($_SESSION['accessToken']);
+//print_r($_SESSION['accessToken']);
 
 $files= array();
 $dir = dir('files');
@@ -28,12 +28,15 @@ while ($file = $dir->read()) {
         $files[] = $file;
     }
 }
+print_r($files);
 $dir->close();
+echo "chao";
 if (!empty($_POST)) {
     $client->setAccessToken($_SESSION['accessToken']);
     $service = new Google_DriveService($client);
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    print_r(FILEINFO_MIME_TYPE);
+    echo 'hola';
+    print_r($finfo);
     $file = new Google_DriveFile();
     foreach ($files as $file_name) {
         $file_path = 'files/'.$file_name;
@@ -50,6 +53,7 @@ if (!empty($_POST)) {
         );
     }
     finfo_close($finfo);
+
     header('location:'.$url);exit;
 }
 include 'main.php';
