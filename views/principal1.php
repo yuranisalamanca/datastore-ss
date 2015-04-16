@@ -29,7 +29,7 @@
 			</ul>	
 		</div>
 		<div class="imagen">
-				<img src="../img/logo2.png">
+				<img src="../img/logo.png">
 			</div>
 		<div class="contenido">	
 			<div id="pestanas">
@@ -47,7 +47,15 @@
 	                Dropbox
 	            </div>
 	            <div id="cpestana2">
-	                Google Drive
+	                <?php 
+	                	
+	                	$result = $_SESSION['result'];
+				        foreach ($result as $value) {
+	                		print_r($value["title"]);
+				          
+				          	echo "<br>";
+				        }
+	                 ?>
 	        	</div>
 	        	<div id="cpestana3">
 	        		Mega

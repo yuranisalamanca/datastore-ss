@@ -18,33 +18,40 @@ if (isset($_GET['code'])) {
 } elseif (!isset($_SESSION['accessToken'])) {
     $client->authenticate();
 }
-print_r($_SESSION['accessToken']);
+
+//print_r($_SESSION['accessToken']);
 $client->setAccessToken($_SESSION['accessToken']);
 $service = new Google_DriveService($client);
 
-
+//print_r($service);
   $result = array();
   $pageToken = NULL;
 
-  do {
+ // do {
     try {
       $parameters = array();
       if ($pageToken) {
         $parameters['pageToken'] = $pageToken;
       }
       $files = $service->files->listFiles($parameters);
-      print_r($files->getItems());
-      $result = array_merge($result, $files->getItems());
-      $pageToken = $files->getNextPageToken();
+      print_r(sizeof($files["items"]));
+      //print_r($files);
+      $result = array_merge($result, $files["items"]);
+      $_SESSION['result'] = $result;
+        foreach ($result as $value) {
+          echo $value["title"];
+          echo "<br>";
+        }
+      //$pageToken = $files->getNextPageToken();
     } catch (Exception $e) {
       print "An error occurred: " . $e->getMessage();
-      $pageToken = NULL;
+      //$pageToken = NULL;
     }
-  } while ($pageToken);
+  //} while ($pageToken);
 //print_r(expression)
 
  ?>
-
+ <!--
  <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -61,4 +68,4 @@ $service = new Google_DriveService($client);
             <input type="submit" value="enviar" name="submit">
         </form>
     </body>
-</html>
+</html>-->
