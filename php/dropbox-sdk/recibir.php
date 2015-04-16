@@ -1,5 +1,5 @@
 <?php 
-require_once "dropbox-sdk/Dropbox/autoload.php";
+require_once "Dropbox/autoload.php";
 use \Dropbox as dbx;
 //use \Dropbox as dbx;
 SESSION_START();
@@ -47,21 +47,4 @@ catch (dbx\Exception $ex) {
 $dbxClient = new dbx\Client($accessToken, "Datastoress");
 $accountInfo = $dbxClient->getAccountInfo();
 print_r($accountInfo);
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
-
-$metaData = $dbxClient->getMetadataWithChildren("/");
-//print_r($metaData['contents']);
-
-//foreach($metaData as $file){
-//   print_r($file['path']);
-//}
-
-foreach ($metaData['contents'] as $key => $value) {
-   print_r($value['path']);
-   echo "<br>";
-}
-
 ?>
