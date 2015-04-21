@@ -292,6 +292,69 @@ fieldset {
 .bienvenidobarra a{
 	margin-left: 20px;
 }
+#contenidopestanas{
+	margin:0 auto;
+	padding: 0;
+}
+.acordion{
+	width: 100%;
+	margin: 0 auto;
+
+
+}
+.acordion ul li .titulo{
+	text-decoration: none;
+	color: white;
+	display: block;
+	/*background: url("../img/chevron-down.png") 96% no-repeat; */
+	font-weight: bold;
+	text-shadow: 2px 2px gray;
+    background: url('../img/icon_plus.png') 96% no-repeat;
+}
+.acordion ul li a span{
+	padding: 10px 10px 10px 25px;
+	display: block;
+
+}
+/*.acordion ul li a.visible {
+  background: url('../img/icon_plus.png') 96%  no-repeat;
+}
+.acordion ul li a.hidden {
+  background: url('../img/icon_minus.png') 96%  no-repeat;
+}*/
+
+.acordion ul{
+	list-style: none;
+	/*padding-left: 0px;*/
+}
+.acordion ul  li{
+	/*background-color: rgba(133, 167, 150, 0.6);*/
+	background: linear-gradient(#77AFB5 0%, #326A70 100%); 
+	display: block;
+
+}
+.acordion ul li ul {
+
+	position: relative;
+
+}
+.acordion ul  ul a:before {
+  content: "»";
+  margin-left: 8px;
+  margin-top: 8px;
+  position: absolute;
+  color: #77AFB5;
+}
+.acordion ul  ul li {
+    border-bottom: 1px solid #d4d4d4;
+    background: linear-gradient(#F0EBEB 0%, #F6EEEE 100%); 
+
+}
+
+.acordion,.acordion ul, .acordion li, .acordion a {
+	padding: 0;
+	margin: 0;
+}
 
 
 /*Tablet*/

@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/main.css">
 		<script src="../js/vendor/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
+		<script type="text/javascript" src="../js/acordiondrive.js"></script>
 	</head>
 	<body>
 		<header class="tituloheader">
@@ -46,8 +47,29 @@
 	            <div id="cpestana1">
 	                Dropbox
 	            </div>
+
 	            <div id="cpestana2">
-	                <?php 
+	            	<section class="acordion">
+	            	<ul>
+	            		<li><a class="titulo" href='#'><span>Mi Unidad</span></a>
+	            			<ul class="block">
+	            				<li><a href='#'><span>Documento 1</span></a></li>
+	            				<li><a href='#'><span>Documento 2</span></a></li>
+	            				<li><a href='#'><span>Documento 3</span></a></li>
+	            				<li><a href='#'><span>Documento 4</span></a></li>
+	            			</ul>
+	            		</li>
+            			<li><a class="titulo" href='#'><span>Compartidos Conmigo</span></a>
+            				<ul class="block">
+            					<li><a href='#'><span>Documento 1</span></a></li>
+            					<li><a href='#'><span>Documento 2</span></a></li>
+            					<li><a href='#'><span>Documento 3</span></a></li>
+            					<li><a href='#'><span>Documento 4</span></a></li>
+            				</ul>
+            			</li>
+	            	</ul>
+	            	</section>
+	               <!--<?php /*
 	                	
 	                	$result = $_SESSION['result'];
 				        foreach ($result as $value) {
@@ -55,7 +77,7 @@
 				          
 				          	echo "<br>";
 				        }
-	                 ?>
+	                 */?>-->
 	        	</div>
 	        	<div id="cpestana3">
 	        		Mega
