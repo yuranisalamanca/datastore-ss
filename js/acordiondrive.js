@@ -13,6 +13,7 @@ $(function(){
      if($(this).next().is(':hidden')){
         //ocultamos el contenido del bloque que se encuentre visible deslizándolo hacia arriba y
         $('.acordion ul li a').next().slideUp();
+        $('.acordion ul li .titulo').css('background','url('+'../img/icon_plus.png'+') 96% no-repeat');
         //mostramos el contenido del bloque seleccionado deslizándolo hacia abajo.
         $(this).next().slideDown();
         $(this).css('background', 'url('+'../img/icon_minus.png'+') 96% no-repeat');

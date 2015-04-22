@@ -53,7 +53,10 @@
 	            	<ul>
 	            		<li><a class="titulo" href='#'><span>Mi Unidad</span></a>
 	            			<ul class="block">
-	            				<li><a href='#'><span>Documento 1</span></a></li>
+	            				<?php $result = $_SESSION['result'];
+	            				foreach ($result as $value) {?>
+	            				<li><a href='#'><span><?php echo $value["title"]; ?></span></a></li>
+	            				<?php } ?>
 	            				<li><a href='#'><span>Documento 2</span></a></li>
 	            				<li><a href='#'><span>Documento 3</span></a></li>
 	            				<li><a href='#'><span>Documento 4</span></a></li>
@@ -69,7 +72,7 @@
             			</li>
 	            	</ul>
 	            	</section>
-	               <!--<?php /*
+	               <?php 
 	                	
 	                	$result = $_SESSION['result'];
 				        foreach ($result as $value) {
@@ -77,7 +80,7 @@
 				          
 				          	echo "<br>";
 				        }
-	                 */?>-->
+	                 ?>
 	        	</div>
 	        	<div id="cpestana3">
 	        		Mega
