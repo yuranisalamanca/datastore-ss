@@ -30,7 +30,7 @@
 			</ul>	
 		</div>
 		<div class="imagen">
-				<img src="../img/logo.png">
+				<img src="../img/este.png">
 			</div>
 		<div class="contenido">	
 			<div id="pestanas">

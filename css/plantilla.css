@@ -26,7 +26,6 @@ body {
 	margin: 0 auto;
 	height: 40px;
 }
-
 .label{
 	width: 60%;
 	display: block;
@@ -36,8 +35,6 @@ body {
 	height: 30px;
 	margin-bottom: 10px;
 }
-
-
 .formulario {
 	height: 285px;
 	background: #F7F7F7;
@@ -47,7 +44,6 @@ body {
 	border-radius: 10px;
 	margin: 0 auto;
 }
-
 legend {
 	padding-bottom: 15px;
 	font-weight: bold;
@@ -55,28 +51,23 @@ legend {
 	font-style: italic;
 	color: #036975;
 }
-
 .titulo{
 	text-align: center;
 	color: #036975;
 	margin-top: 0px;
-
 }
-
 fieldset {
 	margin: 10px 10px;
 	margin-bottom: 10px;
 	text-align: center;
 	border-radius: 10px;
 	border: 2px groove (internal value);
-
 }
 .forgotpassword, .registrar{
 	font-size: 13px;
 	display: block;
 	padding: 5px;
 }
-
 .footerIndex {
 	border-top: 1px solid #036975;
 	color: #036975;
@@ -88,10 +79,15 @@ fieldset {
 .footerIndex .derechos, .footerIndex .autor2{
 	margin-top: 0px;
 }
-
 .cuerpo{
 	margin-bottom: 25px;
 	margin-top: 40px;
+}
+.cuerpo a:link{
+	color:#043347;
+}
+.cuerpo a:hover{
+	color: #85A796;
 }
 .footerbarra, .barraCuenta{
 	background-color: rgba(133, 167, 150, 0.3);
@@ -130,6 +126,10 @@ fieldset {
 	border-right: 2px solid rgba(133, 167, 150, 0.35);
 	border-left: 2px solid rgba(133, 167, 150, 0.35);
 }
+#tabs ul li a:hover{
+	background-color: #85A796;
+	font-size: 16px;
+}
 .logos a{
 	display: inline;
 	text-decoration: none;
@@ -137,7 +137,6 @@ fieldset {
 .logos img{
 	width: 40px;
 	padding: 10px;
-	
 }
 #ctab2 h5{
 	margin-bottom: 0px;
@@ -162,9 +161,7 @@ fieldset {
 	margin-bottom: 10px;
 	width: 100%;
 	display: block;
-
 }
-
 .cuentaForm .etiquetasFormCuenta{
 	color: #043347; 
 	font-size: 15px;
@@ -192,7 +189,6 @@ fieldset {
 .leftInfoCuentas, .centerInforCuentas, .rightInforCuentas{
 	display: table-cell;
 }
-
 .infoDropBox .logos, .infoDrive .logos, .infoMega .logos{
 	width: 150px;
 	display: block;
@@ -214,19 +210,15 @@ fieldset {
 	margin: 0 auto;
 	height: 40px;
 	margin-bottom: 10px;
-
 }
-
 #pestanas {
     float: top;
     font-size: 3ex;
     font-weight: bold;
 }
- 
 #pestanas ul{
     margin-left: -40px;    
 }
- 
 #pestanas li{
     list-style-type: none;
     float: left;
@@ -244,7 +236,6 @@ fieldset {
     /*Color letra*/
     color: #036975;
 }
- 
 #contenidopestanas{
     clear: both;  
     background: white;
@@ -253,26 +244,24 @@ fieldset {
     border-top-left-radius: 0px;
     border: 2px solid #036975;
 }
-
 .aside {
 	text-align: right;
 	width: 30%;
 }
 .imagen {
-	width: 90%;
+	width: 70%;
 	margin: 0 auto;
 }
-
 .imagen img {
-	width: 100%;
-	height: 300px;
+	width: 70%;
+	height: 200px;
+	margin: 0 auto;
 }
 .listabarraprincipal{
 	list-style: none;
 	margin: 0px;
 	text-align: right;
 }
-
 .listabarraprincipal li{
 	display: inline;
 	padding: 10px;
@@ -299,8 +288,6 @@ fieldset {
 .acordion{
 	width: 100%;
 	margin: 0 auto;
-
-
 }
 .acordion ul li .titulo{
 	text-decoration: none;
@@ -322,7 +309,6 @@ fieldset {
 .acordion ul li a.hidden {
   background: url('../img/icon_minus.png') 96%  no-repeat;
 }*/
-
 .acordion ul{
 	list-style: none;
 	/*padding-left: 0px;*/
@@ -331,12 +317,9 @@ fieldset {
 	/*background-color: rgba(133, 167, 150, 0.6);*/
 	background: linear-gradient(#77AFB5 0%, #326A70 100%); 
 	display: block;
-
 }
 .acordion ul li ul {
-
 	position: relative;
-
 }
 .acordion ul  ul a:before {
   content: "»";
@@ -348,14 +331,11 @@ fieldset {
 .acordion ul  ul li {
     border-bottom: 1px solid #d4d4d4;
     background: linear-gradient(#F0EBEB 0%, #F6EEEE 100%); 
-
 }
-
 .acordion,.acordion ul, .acordion li, .acordion a {
 	padding: 0;
 	margin: 0;
 }
-
 
 /*Tablet*/
 @media only screen and (min-width:768px)  and (max-width:1024px) {
