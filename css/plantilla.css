@@ -83,7 +83,7 @@ fieldset {
 	margin-bottom: 25px;
 	margin-top: 40px;
 }
-.cuerpo a:link{
+.cuerpo a{
 	color:#043347;
 }
 .cuerpo a:hover{
@@ -315,7 +315,7 @@ fieldset {
 }
 .acordion ul  li{
 	/*background-color: rgba(133, 167, 150, 0.6);*/
-	background: linear-gradient(#77AFB5 0%, #326A70 100%); 
+	background: linear-gradient(#77AFB5 50%, #326A70 100%); 
 	display: block;
 }
 .acordion ul li ul {
