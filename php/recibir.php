@@ -60,6 +60,16 @@ $metaData = $dbxClient->getMetadataWithChildren("/");
 //}
 
 foreach ($metaData['contents'] as $key => $value) {
+   
+   foreach ($value as $llave => $valor) {
+      if ($llave=='is_dir' && $valor == 1) {
+         $metaData2 = $dbxClient->getMetadataWithChildren($value['path']);
+         foreach ($metaData2['contents'] as $key2 => $value2) {
+            print_r($value2['path']);
+            echo "<br>";
+         }
+      }
+   }
    print_r($value['path']);
    echo "<br>";
 }

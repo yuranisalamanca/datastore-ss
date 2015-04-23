@@ -10,10 +10,12 @@ $client->setClientId('939632221621-12nef07kiggh62irqgcgf6u4glp37cur.apps.googleu
 $client->setClientSecret('NSKrnnvoG5KERS_9BLZZCAEt');
 $client->setRedirectUri($url);
 $client->setScopes(array('https://www.googleapis.com/auth/drive'));
+$service = new Google_DriveService($client);
 
 if (isset($_GET['code'])) {
     //print_r($_GET['code']);
     $_SESSION['accessToken'] = $client->authenticate($_GET['code']);
+    //$_SESSION['accessToken'] = $token;
 //    header('location:'.$url);exit;
 } elseif (!isset($_SESSION['accessToken'])) {
     $client->authenticate();
@@ -21,7 +23,7 @@ if (isset($_GET['code'])) {
 
 //print_r($_SESSION['accessToken']);
 $client->setAccessToken($_SESSION['accessToken']);
-$service = new Google_DriveService($client);
+print_r($client);
 
 //print_r($service);
   $result = array();
