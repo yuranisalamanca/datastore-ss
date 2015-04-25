@@ -29,7 +29,7 @@ function cambiarPestanna(pestannas,pestanna) {
         // modo que esta seleccionada.
         $(cpestanna).css('display','');
         //Color Background pestaña seleccionada
-        $(pestanna).css('background','#85A796');
+        $(pestanna).css('background','rgba(133, 167, 150, 0.9)');
         $(pestanna).css('padding-bottom','2px'); 
     });
  

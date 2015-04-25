@@ -213,11 +213,15 @@ fieldset {
 }
 #pestanas {
     float: top;
-    font-size: 3ex;
+    font-size: 2.8ex;
     font-weight: bold;
 }
 #pestanas ul{
     margin-left: -40px;    
+}
+#pestanas li:hover{
+	background-color: #D6D3B0;
+	font-size: 2.3ex;
 }
 #pestanas li{
     list-style-type: none;
@@ -225,7 +229,8 @@ fieldset {
     text-align: center;
     margin: 0px 2px -2px -0px;
     /*Color pestaña deseleccionada*/
-    background: #D6D3B0;
+    /*background: #D6D3B0;*/
+    background-color: rgba(133, 167, 150, 0.3);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border: 2px solid #036975;
@@ -249,11 +254,12 @@ fieldset {
 	width: 30%;
 }
 .imagen {
-	width: 70%;
+	width: 50%;
 	margin: 0 auto;
+	margin-top: 3%;
 }
 .imagen img {
-	width: 70%;
+	width: 100%;
 	height: 200px;
 	margin: 0 auto;
 }
@@ -266,6 +272,10 @@ fieldset {
 	display: inline;
 	padding: 10px;
 	border-left: 2px solid rgba(133, 167, 150, 0.35);
+}
+.listabarraprincipal li a:hover{
+	background-color: #85A796;
+	font-size: 1.1em;
 
 }
 .listabarraprincipal li a, .bienvenidobarra a{
