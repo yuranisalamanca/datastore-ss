@@ -10,7 +10,7 @@
 			parent::__construct();
 			$this->load->database();
 		}
-	}
+	
 
 	public function login ($usuario, $contrasenia){
 		//$query = "SELECT * FROM users WHERE usuario = ? AND contrasenia = ?";
@@ -19,7 +19,7 @@
 		$query = $this->db->get_where('users', array('usuario'=>$usuario, 'contrasenia'=>$contrasenia));
 		if($query->num_rows>0){
 			$arreglo = array();
-			$cont++;
+			$cont=0;
 			foreach ($query->result() as $row) {
 				$arreglo[$cont]['nombre'] = $row->nombre;
 				$arreglo[$cont]['apellido']= $row->apellido;
@@ -28,7 +28,6 @@
 				$arreglo[$cont]['clavemega'] = $row->clave_mega;
 				$cont++;
 			}
-			return true;
 
 			setcookie("chsm", "logedin", time()+3600, "/", "localhost");
 			header("Location: /Chat");
@@ -39,5 +38,7 @@
 			
 		}
 		return false;
+	}
+	
 	}
  ?>

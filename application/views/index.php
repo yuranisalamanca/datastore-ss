@@ -15,7 +15,7 @@
 			<div class="barracolores"></div>
 		</header>
 		<div class="cuerpo">	
-			<form class="formulario" method="post" action="<?php echo site_url('') ?>">
+			<form class="formulario" method="post" action="<?php echo site_url('usuarioController/login') ?>">
 			<fieldset>
 			<legend align="center">Inicia sesi&oacute;n</legend>		
 					<input class="label" type="text" name="username" placeholder="Ingrese su nombre de usuario" required>
