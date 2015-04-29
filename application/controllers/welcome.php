@@ -19,7 +19,24 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('header');
 		$this->load->view('index');
+		$this->load->view('footer');
+	}
+	public function cuenta()
+	{
+		$this->load->view('header');
+		$this->load->view('cuenta');
+		$this->load->view('footer');
+
+	}
+	public function principal()
+	{
+		$this->load->view('header');
+
+		$this->load->view('principal1');
+		$this->load->view('footer');
+
 	}
 }
 

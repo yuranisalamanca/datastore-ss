@@ -18,26 +18,17 @@
 
 		$query = $this->db->get_where('users', array('usuario'=>$usuario, 'contrasenia'=>$contrasenia));
 		if($query->num_rows>0){
-			$arreglo = array();
-			$cont=0;
-			foreach ($query->result() as $row) {
-				$arreglo[$cont]['nombre'] = $row->nombre;
-				$arreglo[$cont]['apellido']= $row->apellido;
-				$arreglo[$cont]['clavedropbox'] = $row->clave_dropbox;
-				$arreglo[$cont]['clavedrive'] = $row->clave_drive;
-				$arreglo[$cont]['clavemega'] = $row->clave_mega;
-				$cont++;
-			}
-
-			setcookie("chsm", "logedin", time()+3600, "/", "localhost");
-			header("Location: /Chat");
-			exit;
+			$row = $query->row();
+			setcookie("val[name]", $row->nombre);
+			setcookie("val[apellido]",$row->apellido);
+			setcookie("val[clavedropbox]", $row->clave_dropbox);
+			setcookie("val[clavedrive]", $row->clave_drive);
+			setcookie("val[clavemega]", $row->clave_mega);
+			return true;
 			} else {
-				echo "login fallido";
-				$this->cargarVista("index");
+				return false;
 			
 		}
-		return false;
 	}
 	
 	}

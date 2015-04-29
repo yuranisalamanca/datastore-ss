@@ -2,36 +2,34 @@
 <html>
 	<head>
 		<title>Gestor de Archivos Multiplataforma</title>
-		<link rel="stylesheet" type="text/css" href="../css/plantilla.css">
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
-		<script src="../js/vendor/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
-		<script type="text/javascript" src="../js/acordiondrive.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
+		<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/cambiarPestanna.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/acordiondrive.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
 	</head>
 	<body>
-		<header class="tituloheader">
-			<div class="barracolores"></div>
-			<img class="titulobarra" src="../img/titulos4.png">
-			<div class="barracolores"></div>			
-		</header>
 		<div class="barraCuenta">
 			<nav class="bienvenidobarra">
 				<a href="">Bienvenido: 
-					<?php SESSION_START(); 
-					if($_SESSION==null){
+					<?php 
+					if(!isset($_COOKIE["val"])){
 						echo '';
 					}else{
-						echo $_SESSION['nombre'] . " " . $_SESSION['apellido'];
+						echo $_COOKIE['val']['name']. " ". $_COOKIE['val']['apellido'] ;						
 					}
 				?></a>
 			</nav>
 			<ul class="listabarraprincipal">
-				<li><a href="../php/logout.php">Cerrar Sesi&oacute;n</a></li>
+				<li><a href="">Cerrar Sesi&oacute;n</a></li>
 			</ul>	
 		</div>
 		<div class="imagen">
-				<img src="../img/este.png">
-			</div>
+			<img src="<?php echo base_url(); ?>fonts/img/este.png">
+		</div>
+		
 		<div class="contenido">	
 			<div id="pestanas">
 	            <ul id="lista">
@@ -41,7 +39,7 @@
 	            </ul>
 	        </div>
 	        
-        	<body onload="javascript:cambiarPestanna(pestanas,pestana1);">
+        	<body onload="javascript:cambiarPestanna(pestanas,pestana1);"/>
  
 	        <div id="contenidopestanas">
 	            <div id="cpestana1">
@@ -72,26 +70,14 @@
             			</li>
 	            	</ul>
 	            	</section>
-	               <?php 
-	                	
-	                	$result = $_SESSION['result'];
-				        foreach ($result as $value) {
-	                		print_r($value["title"]);
-				          
-				          	echo "<br>";
-				        }
-	                 ?>
+	              
 	        	</div>
 	        	<div id="cpestana3">
 	        		Mega
 	        	</div>
 	        </div>
-			<aside class = "aside">
-			</aside>
-			</div>
-		<footer>
-			
-		</footer>
+		</div>
+
 
 	</body>
 </html>
