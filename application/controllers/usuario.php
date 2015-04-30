@@ -16,9 +16,16 @@
 				$username=$this->input->post('username');
 				$password=$this->input->post('password');
 				$usuario=$this->usuarioModel->login($username, $password);
-				if($usuario){
+				
+				if($usuario!=null){
 					$this->load->view('header');
 					$this->load->view('principal1');
+				}else{
+					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o usuario";
+					
+					$this->load->view('header');
+					$this->load->view('index');
+					$this->load->view('footer');
 				}
 			}
 			
@@ -26,9 +33,10 @@
 
 		public function logout(){
 			setcookie("val","",time()-3600,"/");
-			$this->load->view('header');
-			$this->load->view('index');
-			$this->load->view('footer');
+			//$this->load->view('header');
+			//$this->load->view('index');
+			//$this->load->view('footer');
+			redirect('welcome/index', 'refresh');
 
 		}
 	}
