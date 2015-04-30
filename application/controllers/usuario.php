@@ -39,5 +39,11 @@
 			redirect('welcome/index', 'refresh');
 
 		}
+
+		public function imprimir()
+		{
+			$this->load->model('megaModel');
+			$mega = $this->megaModel->imprimir();
+		}
 	}
  ?>
