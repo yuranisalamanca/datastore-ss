@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class Usuario extends CI_Model
+	class UsuarioModel extends CI_Model
 	{
 		
 		function __construct()

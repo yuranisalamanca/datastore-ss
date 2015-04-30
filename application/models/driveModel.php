@@ -1,8 +1,8 @@
 <?php 
 	/**
-	* 
+	* 	
 	*/
-	class Dropbox extends CI_Model
+	class DriveModel extends CI_Model
 	{
 		
 		function __construct()
@@ -11,3 +11,4 @@
 			$this->load->database();
 		}
 	}
+ ?>

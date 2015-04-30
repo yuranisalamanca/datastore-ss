@@ -2,7 +2,7 @@
 	/**
 	 * 
 	 */
-	 class Mega extends CI_Model
+	 class MegaModel extends CI_Model
 	 {
 	 	
 	 	function __construct()
