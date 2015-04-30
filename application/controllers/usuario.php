@@ -21,7 +21,7 @@
 					$this->load->view('header');
 					$this->load->view('principal1');
 				}else{
-					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o usuario";
+					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o el nombre de usuario";
 					
 					$this->load->view('header');
 					$this->load->view('index');
