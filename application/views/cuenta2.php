@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
 		<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/spacuenta.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap-responsive.css" />
+        <script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.js"></script>
+   		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
+
 		<title>Gestor de Archivos Multiplataforma</title>
 
 	</head>
@@ -15,8 +20,54 @@
 			</ul>
 		</div>
 
+<div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="index.php">TUTORIALES</a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">        
+<li class="link_tutorial">
+                    <a href="" id="link_drive">Informacion Drive</a>                                   
+                </li>                                
+                <li class="link_tutorial">                               
+                    <a href="#" id="link_dropbox">Informacion Dropbox</a>
+                </li>
+                <li class="link_tutorial">                               
+                    <a href="#" id="link_mega">Informacion Mega</a>
+                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+		<div class="nav-collapse collapse">
+            <ul class="nav">        
+
+                <li class="link_tutorial">
+                    <a href="" id="link_drive">Informacion Drive</a>                                   
+                </li>                                
+                <li class="link_tutorial">                               
+                    <a href="#" id="link_dropbox">Informacion Dropbox</a>
+                </li>
+                <li class="link_tutorial">                               
+                    <a href="#" id="link_mega">Informacion Mega</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="span8 hero-unit">
+
 		<div class="cuerpoCuenta">
-			<form method="post" action="" class="cuentaForm">
+			<form method="post" action="" class="">
 				<fieldset>
 					<legend>Crea tu cuenta</legend>
 					<div class="generalCuenta">
@@ -47,85 +98,11 @@
 						</label>
 						</div>
 					</div>
-
-					<div class="infoDropBox">
-						<div class="logos">
-							<h3 class="tituloEmpresa">Dropbox</h3>
-							<img src="../img/dropbox-logo.png">
-						</div>
-						<div class="leftInfoCuentas">
-							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
-								<input class="labelCuenta" name="correoDropbox" type="text" placeholder="Escriba su correo electr&oacute;nico">
-							</label>
-						</div>
-
-						<div class="centerInforCuentas">
-							<label class="etiquetasFormCuenta"> Contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaDropbox" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-
-						<div class="rightInforCuentas">
-							<label class="etiquetasFormCuenta"> Confirma tu contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaConfirmDropbox" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-					</div>
-
-
-					<div class="infoDrive">
-						<div class="logos">
-							<h3 class="tituloEmpresa">Drive</h3>
-							<img src="../img/google-drive-logo.png">
-						</div>
-						<div class="leftInfoCuentas">
-							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
-								<input class="labelCuenta" name="correoDrive" type="text" placeholder="Escriba su correo electr&oacute;nico">
-							</label>
-						</div>
-
-						<div class="centerInforCuentas">
-							<label class="etiquetasFormCuenta"> Contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaDrive" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-
-						<div class="rightInforCuentas">
-							<label class="etiquetasFormCuenta"> Confirma tu contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaConfirmDrive" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-					</div>
-
-
-					<div class="infoMega">
-						<div class="logos">
-							<h3 class="tituloEmpresa">Drive</h3>
-							<img src="../img/mega-logo.png">
-						</div>
-						<div class="leftInfoCuentas">
-							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
-								<input class="labelCuenta" name="correoMega" type="text" placeholder="Escriba su correo electr&oacute;nico">
-							</label>
-						</div>
-
-						<div class="centerInforCuentas">
-							<label class="etiquetasFormCuenta"> Contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaMega" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-
-						<div class="rightInforCuentas">
-							<label class="etiquetasFormCuenta"> Confirma tu contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaConfirmMega" type="text" placeholder="Escriba su contrase&ntilde;a">
-							</label>
-						</div>
-					</div>
 					<input type="submit" class="buttonCrearCuenta" value="Crear cuenta">
 
 				</fieldset>
 			</form>
 		</div>
-	
+	</div>
 	</body>
 </html>

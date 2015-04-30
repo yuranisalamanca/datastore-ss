@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 	public function cuenta()
 	{
 		$this->load->view('header');
-		$this->load->view('cuenta');
+		$this->load->view('cuenta2');
 		$this->load->view('footer');
 
 	}
