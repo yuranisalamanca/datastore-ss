@@ -544,10 +544,10 @@ class MEGA {
    * @see user.js::api_getsid()
    */
   public function user_login_session($email, $password, $args = array()) {
-    $this->log("Preparing user key...");
+    //$this->log("Preparing user key...");
     $pk = MEGACrypto::prepare_key_pw($password);
 
-    $this->log("Preparing user hash...");
+    //$this->log("Preparing user hash...");
     $uh = MEGACrypto::stringhash(strtolower($email), $pk);
 
     $req = array('a' => 'us') + $args;
@@ -766,7 +766,7 @@ class MEGA {
       $url .= '&sid=' . $this->u_sid;
     }
 
-    $this->log("Making API request: " . $payload);
+    //$this->log("Making API request: " . $payload);
     $this->seqno ++;
 
     $response = $this->http_do_request($url, $payload);
@@ -777,7 +777,7 @@ class MEGA {
     }
     */
 
-    $this->log('API response: ' . $response);
+    //$this->log('API response: ' . $response);
 
     return json_decode($response, TRUE);
   }

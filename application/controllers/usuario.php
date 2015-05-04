@@ -18,8 +18,14 @@
 				$usuario=$this->usuarioModel->login($username, $password);
 				
 				if($usuario!=null){
+
+					//$this->load->model('dropboxModel');
+					//$this->dropboxModel->autentificar();
 					$this->load->view('header');
 					$this->load->view('principal1');
+
+					
+
 				}else{
 					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o el nombre de usuario";
 					
@@ -44,6 +50,12 @@
 		{
 			$this->load->model('megaModel');
 			$mega = $this->megaModel->imprimir();
+		}
+
+		public function imprimirDropbox()
+		{
+			$this->load->model('dropboxModel');
+			$this->dropboxModel->autentificar();
 		}
 	}
  ?>

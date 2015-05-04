@@ -54,7 +54,10 @@
 	            				foreach ($result as $value) {?>
 	            				<li><a href='#'><span><?php echo $value["title"]; ?></span></a></li>
 	            				<?php } ?>
-	            				<li><a href='#'><span>Documento 2</span></a></li>
+	            				<li>
+	            					<img src="<?php echo base_url(); ?>fonts/img/descargar.png" />
+
+	            					<a href='#'><span>Documento 2</span></a></li>
 	            				<li><a href='#'><span>Documento 3</span></a></li>
 	            				<li><a href='#'><span>Documento 4</span></a></li>
 	            			</ul>
