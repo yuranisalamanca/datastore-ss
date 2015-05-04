@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
-		<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>js/spacuenta.js"></script>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css" />
-        <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap-responsive.css" />
-        <script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.js"></script>
-   		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
 
-		<title>Gestor de Archivos Multiplataforma</title>
 
-	</head>
-	<body>
 		<div class="barraCuenta">	
 			<ul class="listabarraprincipal">
 				<li><a href="index.html">Iniciar Sesi&oacute;n</a></li>
@@ -31,7 +17,7 @@
                         <a class="brand" href="index.php">TUTORIALES</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">        
-<li class="link_tutorial">
+				<li class="link_tutorial">
                     <a href="" id="link_drive">Informacion Drive</a>                                   
                 </li>                                
                 <li class="link_tutorial">                               
@@ -47,26 +33,6 @@
                 </div>
             </div>
 
-
-		<div class="nav-collapse collapse">
-            <ul class="nav">        
-
-                <li class="link_tutorial">
-                    <a href="" id="link_drive">Informacion Drive</a>                                   
-                </li>                                
-                <li class="link_tutorial">                               
-                    <a href="#" id="link_dropbox">Informacion Dropbox</a>
-                </li>
-                <li class="link_tutorial">                               
-                    <a href="#" id="link_mega">Informacion Mega</a>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="span8 hero-unit">
-
-		<div class="cuerpoCuenta">
 			<form method="post" action="" class="">
 				<fieldset>
 					<legend>Crea tu cuenta</legend>
@@ -102,7 +68,3 @@
 
 				</fieldset>
 			</form>
-		</div>
-	</div>
-	</body>
-</html>

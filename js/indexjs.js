@@ -28,3 +28,30 @@ function cambiarTab(tabs,tabActual){
         $(tabActual).css('padding-bottom','2px'); 
     });
 }
+
+
+
+$(document).ready(function() {
+
+
+
+$('#registrar').click(function(event) {
+        event.preventDefault();
+        link('welcome/cuenta', '.cuerpo');
+    });
+
+});
+
+function link(url, update) {
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'html',
+        success: function(respuesta)
+        {
+            $(update).html(respuesta);
+            
+        }
+    });
+
+}

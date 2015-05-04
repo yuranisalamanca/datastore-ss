@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap.min.css">
-
 		<title>Gestor de Archivos Multiplataforma</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
@@ -21,7 +20,7 @@
 				<input class="labelIndex" type="password" name="password" placeholder="Ingrese su contrase&ntilde;a" required>
 				<input type="submit" class="button" value="Iniciar Sesi&oacute;n">
 				<a href="#" class="forgotpassword"> &iquest;Has olvidado tu contrase&ntilde;a?</a>
-				<a href="cuenta.html" class="registrar">Registrarse</a>
+				<a href="cuenta.html" id="registrar" class="registrar">Registrarse</a>
 				<a href="#" class="registrar">Cambiar contrase&ntilde;a</a>
 				
 				<?php if (isset($_POST['mensajeerror'])){ ?>
