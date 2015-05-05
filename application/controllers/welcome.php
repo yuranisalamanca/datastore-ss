@@ -33,12 +33,16 @@ class Welcome extends CI_Controller {
 	public function drive(){
 		$this->load->view('cuentaDrive');
 	}
+	public function dropbox(){
+		$this->load->view('cuentaDropbox');
+	}
+	public function mega(){
+		$this->load->view('cuentaMega');
+	}
 	public function principal()
 	{
 		$this->load->view('header');
-
 		$this->load->view('principal1');
-
 	}
 }
 

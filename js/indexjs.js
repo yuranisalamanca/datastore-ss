@@ -32,16 +32,48 @@ function cambiarTab(tabs,tabActual){
 
 
 $(document).ready(function() {
-$('#registrar').click(function(event) {
+    $('.listabarraprincipal').on('click', '.link_cuenta', function(event) {
+        if ($('.active').length) {
+            $('.link_cuenta').removeClass('active');
+        }
+
+        $(this).addClass('active');
+        $('.link_cuenta a').css('color','#85A796');
+    });
+
+    $('.cuerpo').on('click', '#infoDrive', function(event) {
+        event.preventDefault();
+        link('welcome/drive', '.cuerpoCuenta');
+        $('.link_cuenta a').css('color','#036975');
+        $(this).css('color','#85A796');
+
+    });
+    $('.cuerpo').on('click', '#infoDropbox', function(event) {
+        event.preventDefault();
+        link('welcome/dropbox', '.cuerpoCuenta');
+        $('.link_cuenta a').css('color','#036975');
+        $(this).css('color','#85A796');
+    });
+    $('.cuerpo').on('click', '#infoMega', function(event) {
+        event.preventDefault();
+        link('welcome/mega', '.cuerpoCuenta');
+        $('.link_cuenta a').css('color','#036975');
+        $(this).css('color','#85A796');
+    });
+    $('.cuerpo').on('click', '#info', function(event) {
+        event.preventDefault();
+        link('welcome/general', '.cuerpoCuenta');
+        $('.link_cuenta a').css('color','#036975');
+        $(this).css('color','#85A796');
+    });
+
+
+
+    $('#registrar').click(function(event) {
         event.preventDefault();
         link('welcome/cuenta', '.cuerpo');
-    });
- $('#infoDrive').click(function(event){
-    window.alert('dirveeee');
-    event.preventDefault();
-    link('welcome/drive', '.cuerpoCuenta');
+        });
 
-});
 });
 
 

@@ -80,7 +80,7 @@ fieldset {
 	margin-top: 1%;
 }
 .cuerpo{
-	margin-bottom: 25px;
+	margin-bottom: 8%;
 	
 }
 .cuerpo a{
@@ -148,8 +148,7 @@ fieldset {
 	box-shadow: 7px 7px 7px rgba(0, 0 , 0 , 0.3);
 	border-radius: 10px;
 	background: #F7F7F7;
-	height: 895px;
-	margin-bottom: 75px;
+	padding: 2%;
 }
 .cuerpoCuenta{
 	margin-top: 40px;
@@ -192,6 +191,8 @@ fieldset {
 .infoDropBox .logos, .infoDrive .logos, .infoMega .logos{
 	width: 150px;
 	display: block;
+	text-align: center;
+	margin-bottom: 1%;
 }
 .infoDropBox .logos img, .infoDrive .logos img, .infoMega .logos img {
 	width: 50%;
@@ -205,11 +206,11 @@ fieldset {
 .buttonCrearCuenta{
 	padding-right: 0px;
 	padding-left: 0px;
-	width: 20%;
+	width: 22%;
 	display: block;
 	margin: 0 auto;
 	height: 40px;
-	margin-bottom: 10px;
+	
 }
 #pestanas {
     float: top;
