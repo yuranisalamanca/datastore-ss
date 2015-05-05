@@ -19,7 +19,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper(array('form'));
 		$this->load->view('header');
 		$this->load->view('index');
 		$this->load->view('footer');
@@ -27,9 +26,12 @@ class Welcome extends CI_Controller {
 	public function cuenta()
 	{
 		//$this->load->view('header');
-		$this->load->view('cuenta2');
+		$this->load->view('cuenta');
 		//$this->load->view('footer');
 
+	}
+	public function drive(){
+		$this->load->view('cuentaDrive');
 	}
 	public function principal()
 	{

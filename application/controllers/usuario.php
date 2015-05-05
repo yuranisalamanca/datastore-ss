@@ -42,7 +42,7 @@
 			//$this->load->view('header');
 			//$this->load->view('index');
 			//$this->load->view('footer');
-			redirect('welcome/index', 'refresh');
+			redirect('', 'refresh');
 
 		}
 

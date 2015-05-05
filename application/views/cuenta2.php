@@ -6,34 +6,8 @@
 			</ul>
 		</div>
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="brand" href="index.php">TUTORIALES</a>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav">        
-				<li class="link_tutorial">
-                    <a href="" id="link_drive">Informacion Drive</a>                                   
-                </li>                                
-                <li class="link_tutorial">                               
-                    <a href="#" id="link_dropbox">Informacion Dropbox</a>
-                </li>
-                <li class="link_tutorial">                               
-                    <a href="#" id="link_mega">Informacion Mega</a>
-                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-			<form method="post" action="" class="">
+		<div class="cuerpoCuenta">
+			<form method="post" action="" class="cuentaForm">
 				<fieldset>
 					<legend>Crea tu cuenta</legend>
 					<div class="generalCuenta">
@@ -68,3 +42,4 @@
 
 				</fieldset>
 			</form>
+		</div>

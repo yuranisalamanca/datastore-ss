@@ -10,9 +10,11 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/acordiondrive.js"></script>
 	</head>
 	<body>
+	<div class="cuerpo">
 		<div class="barraCuenta">
-			<nav class="bienvenidobarra">
-				<a href="">Bienvenido: 
+			<ul class="listabarraprincipal">
+			<li class="bienvenidobarra">
+				<a >Bienvenido: 
 					<?php 
 					if(!isset($_COOKIE["val"])){
 						echo '';
@@ -20,9 +22,8 @@
 						echo $_COOKIE['val']['name']. " ". $_COOKIE['val']['apellido'] ;						
 					}
 				?></a>
-			</nav>
-			<ul class="listabarraprincipal">
-				<li><a href="<?php echo site_url('usuario/logout') ?>">Cerrar Sesi&oacute;n</a></li>
+			</li>
+				<li><a class="cerrarSesion" href="<?php echo site_url('usuario/logout') ?>">Cerrar Sesi&oacute;n</a></li>
 			</ul>	
 		</div>
 		<div class="imagen">
@@ -79,7 +80,7 @@
 	        </div>
 		</div>
 
-
+	</div>
 
 	<footer class="footerIndex">	
 

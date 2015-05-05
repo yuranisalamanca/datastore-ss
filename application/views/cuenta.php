@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/plantilla.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
-		<script src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
-		<title>Gestor de Archivos Multiplataforma</title>
 
-	</head>
-	<body>
 		<div class="barraCuenta">	
+			
 			<ul class="listabarraprincipal">
-				<li><a href="index.html">Iniciar Sesi&oacute;n</a></li>
+				<li><a id="info" href="">Informaci&oacute;n General</a></li>
+				<li><a id="infoDrive" href="">Informaci&oacute;n Drive</a></li>
+				<li><a id="infoDropbox" href="">Informaci&oacute;n Dropbox</a></li>
+				<li><a id="infoMega" href="">Informaci&oacute;n Mega</a></li>
+
+				<li><a class="inicarsesion" href="">Iniciar Sesi&oacute;n</a></li>
 			</ul>
 		</div>
 
@@ -51,7 +47,7 @@
 					<div class="infoDropBox">
 						<div class="logos">
 							<h3 class="tituloEmpresa">Dropbox</h3>
-							<img src="../img/dropbox-logo.png">
+							<img src="<?php echo base_url(); ?>fonts/img/dropbox-logo.png">
 						</div>
 						<div class="leftInfoCuentas">
 							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
@@ -76,7 +72,7 @@
 					<div class="infoDrive">
 						<div class="logos">
 							<h3 class="tituloEmpresa">Drive</h3>
-							<img src="../img/google-drive-logo.png">
+							<img src="<?php echo base_url(); ?>fonts/img/google-drive-logo.png">
 						</div>
 						<div class="leftInfoCuentas">
 							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
@@ -101,7 +97,7 @@
 					<div class="infoMega">
 						<div class="logos">
 							<h3 class="tituloEmpresa">Drive</h3>
-							<img src="../img/mega-logo.png">
+							<img src="<?php echo base_url(); ?>fonts/img/mega-logo.png">
 						</div>
 						<div class="leftInfoCuentas">
 							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
@@ -126,6 +122,3 @@
 				</fieldset>
 			</form>
 		</div>
-	
-	</body>
-</html>

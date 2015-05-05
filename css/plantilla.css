@@ -74,14 +74,14 @@ fieldset {
 	text-align: center;
 }
 .footerIndex  .copyright, .footerIndex .autor1 {
-	margin-bottom: 0px;
+	margin-bottom: 1%;
 }
 .footerIndex .derechos, .footerIndex .autor2{
-	margin-top: 0px;
+	margin-top: 1%;
 }
 .cuerpo{
 	margin-bottom: 25px;
-	margin-top: 40px;
+	
 }
 .cuerpo a{
 	color:#043347;
@@ -135,7 +135,7 @@ fieldset {
 	text-decoration: none;
 }
 .logos img{
-	width: 40px;
+	width: 60px;
 	padding: 10px;
 }
 #ctab2 h5{
@@ -263,21 +263,26 @@ fieldset {
 	height: 200px;
 	margin: 0 auto;
 }
-.listabarraprincipal{
+
+.listabarraprincipal .inicarsesion, .listabarraprincipal .cerrarsesion{
 	list-style: none;
-	margin: 0px;
-	text-align: right;
+	float: right;
+	margin-right: 1%;
 }
+
+
+.listabarraprincipal{
+	margin: 0%;
+	padding-left: 0px;
+
+}
+
 .listabarraprincipal li{
 	display: inline;
 	padding: 10px;
 	border-left: 2px solid rgba(133, 167, 150, 0.35);
 }
-.listabarraprincipal li a:hover{
-	background-color: #85A796;
-	font-size: 1.1em;
 
-}
 .listabarraprincipal li a, .bienvenidobarra a{
 	font-family: Arial, Verdana, Helvetica;
 	text-decoration: none;
@@ -285,8 +290,7 @@ fieldset {
 	color: #036975;
 }
 .bienvenidobarra{
-	display: inline-block;
-	float: left;
+	
 }
 .bienvenidobarra a{
 	margin-left: 20px;

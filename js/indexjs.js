@@ -32,15 +32,21 @@ function cambiarTab(tabs,tabActual){
 
 
 $(document).ready(function() {
-
-
-
 $('#registrar').click(function(event) {
         event.preventDefault();
         link('welcome/cuenta', '.cuerpo');
     });
+ $('#infoDrive').click(function(event){
+    window.alert('dirveeee');
+    event.preventDefault();
+    link('welcome/drive', '.cuerpoCuenta');
 
 });
+});
+
+
+
+
 
 function link(url, update) {
     $.ajax({
