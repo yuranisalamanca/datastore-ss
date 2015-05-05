@@ -367,7 +367,7 @@ fieldset {
     	margin: 0 auto;
     }
 
-    .footerIndex {
+    .footerIndex, .barraCuenta {
     	width: 90%;
     	margin: 0 auto;
     }
@@ -405,7 +405,7 @@ fieldset {
     	margin: 0 auto;
     }
 
-    .footerIndex {
+    .footerIndex, .barraCuenta {
     	width: 90%;
     	margin: 0 auto;
     }
@@ -451,7 +451,7 @@ fieldset {
     	margin: 0 auto;
     }
 
-    .footerIndex {
+    .footerIndex, .barraCuenta{
     	width: 95%;
     	margin: 0 auto;
     }
