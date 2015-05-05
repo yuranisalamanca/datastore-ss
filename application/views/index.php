@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/vendor/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/indexjs.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.js"></script>
 	</head>
 	<body>
 		<div class="cuerpo">
