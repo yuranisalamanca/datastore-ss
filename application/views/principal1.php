@@ -59,22 +59,20 @@
 	            				foreach ($metaData['contents'] as $value) {?>
 	            				<li><a href='<?php echo site_url('usuario/descargar') ?>'><span><?php print_r($value['path']); echo "<br>"; ?></span></a></li>
 	            				<?php } ?>
-	            				<li>
+	            				<!--<li>
 	            					<img src="<?php echo base_url(); ?>fonts/img/descargar.png" />
 
-	            					<a href='#'><span>Documento 2</span></a></li>
-	            				<li><a href='#'><span>Documento 3</span></a></li>
-	            				<li><a href='#'><span>Documento 4</span></a></li>
+	            					<a href='#'><span>Documento 2</span></a></li>-->
 	            			</ul>
 	            		</li>
-            			<li><a class="titulo" href='#'><span>Compartidos Conmigo</span></a>
+            			<!--<li><a class="titulo" href='#'><span>Compartidos Conmigo</span></a>
             				<ul class="block">
             					<li><a href='#'><span>Documento 1</span></a></li>
             					<li><a href='#'><span>Documento 2</span></a></li>
             					<li><a href='#'><span>Documento 3</span></a></li>
             					<li><a href='#'><span>Documento 4</span></a></li>
             				</ul>
-            			</li>
+            			</li>-->
 	            	</ul>
 	            	</section>    
 	            </div>
@@ -88,12 +86,11 @@
 	            				foreach ($result as $value) {?>
 	            				<li><a href='#'><span><?php echo $value["title"]; ?></span></a></li>
 	            				<?php } ?>
-	            				<li>
+	            				<!--<li>
 	            					<img src="<?php echo base_url(); ?>fonts/img/descargar.png" />
 
-	            					<a href='#'><span>Documento 2</span></a></li>
-	            				<li><a href='#'><span>Documento 3</span></a></li>
-	            				<li><a href='#'><span>Documento 4</span></a></li>
+	            					<a href='#'><span>Documento 2</span></a></li>-->
+	            				
 	            			</ul>
 	            		</li>
             			<li><a class="titulo" href='#'><span>Compartidos Conmigo</span></a>

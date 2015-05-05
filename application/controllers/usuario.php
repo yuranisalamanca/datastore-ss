@@ -190,7 +190,7 @@
 			SESSION_START();
 			print_r($_SESSION['dbxClient']);
 			$this->dbxClient = $_SESSION['dbxClient'];
-			$f = fopen("Comenzar.pdf", "w+b");
+			$f = fopen("C:\Comenzar.pdf", "w+b");
 
 			$fileMetadata = $this->dbxClient->getFile("/Comenzar.pdf", $f);
 			fclose($f);
