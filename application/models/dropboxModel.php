@@ -72,6 +72,7 @@
 			}
 
 			$dbxClient = new dbx\Client($accessToken, "Datastoress");
+			
 			$accountInfo = $dbxClient->getAccountInfo();
 			print_r($accountInfo);
 

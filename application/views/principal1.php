@@ -43,7 +43,40 @@
  	
 	        <div id="contenidopestanas">
 	            <div id="cpestana1">
-	                Dropbox
+	                <section class="acordion">
+	            	<ul>
+	            		<li><a class="titulo" href='#'><span>Mi Unidad</span></a>
+	            			<ul class="block">
+	            				<?php 
+	            				if(!isset($_COOKIE["val"])){
+									echo '';
+								}else{
+									SESSION_START();
+									$dbxClient = $_SESSION['dbxClient'];
+									//$dbxClient = $_COOKIE['val']['dbxClient'];						
+								}
+	            				$metaData = $dbxClient->getMetadataWithChildren("/");;
+	            				foreach ($metaData['contents'] as $value) {?>
+	            				<li><a href='<?php echo site_url('usuario/descargar') ?>'><span><?php print_r($value['path']); echo "<br>"; ?></span></a></li>
+	            				<?php } ?>
+	            				<li>
+	            					<img src="<?php echo base_url(); ?>fonts/img/descargar.png" />
+
+	            					<a href='#'><span>Documento 2</span></a></li>
+	            				<li><a href='#'><span>Documento 3</span></a></li>
+	            				<li><a href='#'><span>Documento 4</span></a></li>
+	            			</ul>
+	            		</li>
+            			<li><a class="titulo" href='#'><span>Compartidos Conmigo</span></a>
+            				<ul class="block">
+            					<li><a href='#'><span>Documento 1</span></a></li>
+            					<li><a href='#'><span>Documento 2</span></a></li>
+            					<li><a href='#'><span>Documento 3</span></a></li>
+            					<li><a href='#'><span>Documento 4</span></a></li>
+            				</ul>
+            			</li>
+	            	</ul>
+	            	</section>    
 	            </div>
 
 	            <div id="cpestana2">
