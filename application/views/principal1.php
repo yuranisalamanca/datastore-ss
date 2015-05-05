@@ -112,7 +112,7 @@
 
 	</div>
 
-	<footer class="footerIndex">	
+	<!--<footer class="footerIndex">	
 
 	<div id="contenidotabs">
 		 <div id="ctab1">
@@ -151,7 +151,7 @@
 			</ul>
 		</div>
 	</div>
-</footer>
+</footer>-->
 
 
 	</body>

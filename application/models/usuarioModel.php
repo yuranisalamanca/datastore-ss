@@ -51,6 +51,8 @@
 			);
 		return $this->db->insert('users',$data);
 	}
+
+	
 	
 	}
  ?>

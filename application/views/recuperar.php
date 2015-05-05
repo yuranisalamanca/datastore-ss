@@ -9,7 +9,7 @@
 
 <legend align="center">Recuperar Contrase&ntilde;a</legend>
 
-	<input class="labelIndex" type="text" name="email" placeholder="Ingrese su correo electr&oacute;nico" required>
+	<input class="labelIndex" type="email" name="email" placeholder="Ingrese su correo electr&oacute;nico" required>
 	<input type="submit" class="button" value="Recuperar">
 	
 	<?php if (isset($_POST['recuperar'])){ ?>

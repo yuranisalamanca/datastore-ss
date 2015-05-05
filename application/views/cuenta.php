@@ -27,28 +27,28 @@
 					<div class="generalCuenta">
 						<div class="leftCuenta">
 							<label class="etiquetasFormCuenta"> Nombre 
-								<input class="labelCuenta" name="nombreU" type="text" placeholder="Escriba su nombre">
+								<input class="labelCuenta" name="nombreU" type="text" placeholder="Escriba su nombre" required>
 							</label>
 
 							<label class="etiquetasFormCuenta"> Correo Electr&oacute;nico 
-								<input class="labelCuenta" name="correoU" type="text" placeholder="Escriba su correo electr&oacute;nico">
+								<input class="labelCuenta" name="correoU" type="email" placeholder="Escriba su correo electr&oacute;nico" required>
 							</label>
 
 							<label class="etiquetasFormCuenta"> Contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaU" type="text" placeholder="Escriba su contrase&ntilde;a">
+								<input type="password" class="labelCuenta" name="contraseniaU" placeholder="Escriba su contrase&ntilde;a" required>
 							</label>
 						</div>
 
 						<div class="rightCuenta">
 							<label class="etiquetasFormCuenta"> Apellido
-								<input class="labelCuenta" name="apellidoU" type="text" placeholder="Escriba sus apellidos">
+								<input class="labelCuenta" name="apellidoU" type="text" placeholder="Escriba sus apellidos" required>
 							</label>
 							<label class="etiquetasFormCuenta"> Usuario
-								<input class="labelCuenta" name="usuarioU" type="text" placeholder="Escriba el nombre de usuario">
+								<input class="labelCuenta" name="usuarioU" type="text" placeholder="Escriba el nombre de usuario" required>
 							</label>
 							
 							<label class="etiquetasFormCuenta"> Confirma tu contrase&ntilde;a 
-								<input class="labelCuenta" name="contraseniaConfirmU" type="text" placeholder="Escriba su contrase&ntilde;a">
+								<input type="password" class="labelCuenta" name="contraseniaConfirmU" placeholder="Escriba su contrase&ntilde;a" required>
 						</label>
 						</div>
 					</div>
