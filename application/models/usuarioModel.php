@@ -31,6 +31,16 @@
 		}
 	}
 
+	public function recuperar($email){
+		$query = $this->db->get_where('users', array('email' => $email));
+		if($query->num_rows>0){
+			$row = $query->row();
+			return $row;
+		}else{
+			return false;
+		}
+	}
+
 	public function createUser($nombre, $apellido, $email, $usuario, $contrasenia){
 		$data = array(
 			'nombre'=>$nombre,

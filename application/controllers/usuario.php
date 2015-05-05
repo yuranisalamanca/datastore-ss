@@ -24,13 +24,47 @@
 					//$this->load->model('dropboxModel');
 					//$this->dropboxModel->autentificar();
 					$this->load->view('header');
-					$this->load->view('principal1');		
+					$this->load->view('principal1');
+					$this->load->view('footer');		
 				}else{
 					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o el nombre de usuario";
 					
 					$this->load->view('header');
 					$this->load->view('index');
 					$this->load->view('footer');
+
+				}
+			}
+		}
+
+		public function recuperar(){
+			$this->load->model('usuarioModel');
+			if($this->input->post('email')!=null){
+				$email = $this->input->post('email');
+				$usuario=$this->usuarioModel->recuperar($email);
+				if($usuario!=null){
+					$this->load->library('email');
+					$this->email->from('yuranisalamanca@gmail.com', 'Datastoress');
+					$this->email->to($usuario->email);  
+
+					$this->email->subject('Correo de Prueba');
+					$this->email->message('Probando la clase email');	
+
+					$this->email->send();
+					echo $this->email->print_debugger();
+
+
+					$_POST['recuperar'] = "Los datos se han enviado al correo".$usuario->email;
+					$this->load->view('header');
+					$this->load->view('recuperar');
+					$this->load->view('footer');
+				}else{
+					$_POST['recuperar'] = "El correo electronico no existe";
+
+					$this->load->view('header');
+					$this->load->view('recuperar');
+					$this->load->view('footer');
+
 				}
 			}
 		}

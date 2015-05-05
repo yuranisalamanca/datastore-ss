@@ -39,6 +39,12 @@ class Welcome extends CI_Controller {
 	public function mega(){
 		$this->load->view('cuentaMega');
 	}
+	public function recuperar(){
+		$this->load->view('recuperar');
+	}
+	public function cambiar(){
+		$this->load->view('cambiar');
+	}
 	public function principal()
 	{
 		$this->load->view('header');
