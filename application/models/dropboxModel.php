@@ -12,11 +12,16 @@
 	{
 		private $appInfo =null;
 
+		// Recuerda en java cuando la ruta quedaba relativa? con ./? aja, quiza es eso, por el framework
+		// lo que no entiendo es pro qeu coloca los / en \
+		// sto es codeigniter, no?si
+
 		function __construct()
 		{
+			//echo getcwd();
 			parent::__construct();
 			$this->load->database();
-			$appInfo = dbx\AppInfo::loadFromJsonFile(base_url()."application/libraries/dropbox-sdk/app-info.json");
+			$this->appInfo = dbx\AppInfo::loadFromJsonFile("./application/libraries/dropbox-sdk/app-info.json");
 		}
 
 		public function autentificar(){
@@ -25,16 +30,16 @@
 			//echo getcwd();
 			//echo site_url();
 		   	$clientIdentifier = "Datastoress";
-		   	$redirectUri = base_url(). "/usuario/imprimirDropbox";
+		   	$redirectUri = base_url(). "usuario/recibirDropbox";
 		   	$csrfTokenStore = new dbx\ArrayEntryStore($_SESSION, 'token');
-		   	$getWebAuth = new dbx\WebAuth($appInfo, $clientIdentifier, $redirectUri, $csrfTokenStore, null);
+		   	$getWebAuth = new dbx\WebAuth($this->appInfo, $clientIdentifier, $redirectUri, $csrfTokenStore, null);
 
 		   	$_SESSION['WebAuth'] = $getWebAuth;
 		   	$authorizeUrl = $getWebAuth->start();
 			header("Location: $authorizeUrl");
 		}
 
-		public function cargarArchivos($service){
+		public function cargarArchivos(){
 			
 			
 			SESSION_START();
