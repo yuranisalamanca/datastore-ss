@@ -1,23 +1,29 @@
 <?php 
+
+	require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
+
+	use \Dropbox as dbx;
+
+	
 	/**
 	* 
 	*/
 	class DropboxModel extends CI_Model
 	{
-		
+		private $appInfo =null;
+
 		function __construct()
 		{
 			parent::__construct();
 			$this->load->database();
+			$appInfo = dbx\AppInfo::loadFromJsonFile(base_url()."application/libraries/dropbox-sdk/app-info.json");
 		}
 
 		public function autentificar(){
 			session_start();
 	
-			require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
-			use \Dropbox as dbx;
-			
-			$appInfo = dbx\AppInfo::loadFromJsonFile(base_url() ."/application/libraries/dropbox-sdk/app-info.json");
+			//echo getcwd();
+			//echo site_url();
 		   	$clientIdentifier = "Datastoress";
 		   	$redirectUri = base_url(). "/usuario/imprimirDropbox";
 		   	$csrfTokenStore = new dbx\ArrayEntryStore($_SESSION, 'token');
@@ -29,8 +35,7 @@
 		}
 
 		public function cargarArchivos($service){
-			require_once "Dropbox/autoload.php";
-			use \Dropbox as dbx;
+			
 			
 			SESSION_START();
 			
