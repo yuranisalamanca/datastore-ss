@@ -11,9 +11,19 @@
 		</div>
 
 		<div class="cuerpoCuenta">
-			<form method="post" action="" class="cuentaForm">
+			<form method="post" action="<?php echo site_url('usuario/createUser') ?>" class="cuentaForm">
 				<fieldset>
 					<legend>Crea tu cuenta</legend>
+					<?php if (isset($_POST['exitoAgregar'])){ ?>
+				
+					<div class="alert alert-danger" role="alert">
+						<?php echo $_POST['exitoAgregar']; ?>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  					<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<?php } ?>
+					
 					<div class="generalCuenta">
 						<div class="leftCuenta">
 							<label class="etiquetasFormCuenta"> Nombre 

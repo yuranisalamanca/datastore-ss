@@ -30,6 +30,17 @@
 			
 		}
 	}
+
+	public function createUser($nombre, $apellido, $email, $usuario, $contrasenia){
+		$data = array(
+			'nombre'=>$nombre,
+			'apellido'=>$apellido,
+			'email'=>$email,
+			'usuario'=>$usuario,
+			'contrasenia'=>$contrasenia
+			);
+		return $this->db->insert('users',$data);
+	}
 	
 	}
  ?>
