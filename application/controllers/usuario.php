@@ -44,7 +44,19 @@
 				$usuario=$this->usuarioModel->recuperar($email);
 				if($usuario!=null){
 					$this->load->library('email');
-					$this->email->from('yuranisalamanca@gmail.com', 'Datastoress');
+					/*$config['protocol'] = 'smtp';
+					$config["smtp_host"] = 'smtp.gmail.com';
+					$config["smtp_user"] = 'yuranisalamanca@gmail.com';
+					$config["smtp_pass"] = '';
+					$config['charset'] = 'utf-8';
+					$config['wordwrap'] = TRUE;
+
+					$config['validate'] = true;
+					$this->email->initialize($config);*/
+
+
+
+					$this->email->from('alejas_024@hotmail.com', 'Datastoress');
 					$this->email->to($usuario->email);  
 
 					$this->email->subject('Correo de Prueba');
