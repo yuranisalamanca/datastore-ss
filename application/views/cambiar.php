@@ -4,27 +4,25 @@
 		<li><a class="inicarsesion" href="">Iniciar Sesi&oacute;n</a></li>
 	</ul>
 </div>
-<form class="formulario" method="post" action="<?php echo site_url('usuario/cambiar') ?>">	
+<form class="formulario" method="post" id="form-cambiar-contrasenia">	
 <fieldset>
 
 <legend align="center">Cambiar Contrase&ntilde;a</legend>
 
 	<input class="labelIndex" type="email" name="email" placeholder="Ingrese su correo electr&oacute;nico" required>
 	<input class="labelIndex" type="password" name="password" placeholder="Ingrese su contrase&ntilde;a actual" required>
-	<input class="labelIndex" type="password" name="passwordnew" placeholder="Ingrese su nueva contrase&ntilde;a" required>
-	<input class="labelIndex" type="password" name="passwordcheck" placeholder="Verificar nueva contrase&ntilde;a" required>
-
-	<input type="submit" class="button" value="Cambiar Contrase&ntilde;a">
+	<input class="labelIndex" type="password" name="passwordnew" id="passwordnew" placeholder="Ingrese su nueva contrase&ntilde;a" required>
+	<input class="labelIndex" type="password" name="passwordcheck" id="passwordcheck" placeholder="Verificar nueva contrase&ntilde;a" required>
+	<input type="button" class="button" id="btn-cambiar-contrasenia" value="Cambiar Contrase&ntilde;a">
 	
-	<?php if (isset($_POST['cambiar'])){ ?>
 	
-	<div class="alert alert-danger" role="alert">
-		<?php echo $_POST['cambiar']; ?>
+	<div id="msg-errores" class="alert alert-danger" role="alert">
+		
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 		</button>
 	</div>
-	<?php } ?>
+	
 </fieldset>
 </form>
 </div>

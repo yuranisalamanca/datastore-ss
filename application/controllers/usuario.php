@@ -89,6 +89,34 @@
 			redirect('', 'refresh');
 		}
 
+		public function cambiar(){
+			$this->load->model('usuarioModel');
+			if($this->input->post('email')!=null && $this->input->post('password')!=null
+				&&$this->input->post('passwordnew')!=null && $this->input->post('passwordcheck')!=null){
+				$passwordnew = $this->input->post('passwordnew');
+				$passwordcheck = $this->input->post('passwordcheck');
+				$mensaje['estado'] =  "error";
+				if($passwordnew!=$passwordcheck){
+					$mensaje['errores']= 'Verifique la nueva  contraseña';
+				}else{
+					$email=$this->input->post('email');
+					$passwordActual = $this->input->post('password');
+					$usuario=$this->usuarioModel->cambiarContrasenia($email,$passwordActual,$passwordnew);
+					if($usuario == null){
+						$mensaje['errores'] = 'El email o la contrasenia actual no son validos';
+					}else{
+						$mensaje['estado'] = "success";
+						$mensaje['mensaje'] = "Su contraseña se ha cambiado exitosamente";
+					}
+				}
+				echo json_encode($mensaje);
+			}
+		}
+
+
+
+
+
 		public function createUser(){
 			$this->load->model('usuarioModel');
 			if($this->input->post('nombreU')!=null && $this->input->post('apellidoU')!=null

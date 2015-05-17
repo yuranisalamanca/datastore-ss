@@ -27,7 +27,7 @@ function cambiarTab(tabs,tabActual){
         $(tabActual).css('background','rgba(133, 167, 150, 0.35)');
         $(tabActual).css('padding-bottom','2px'); 
     });
-}
+};
 
 
 
@@ -66,6 +66,43 @@ $(document).ready(function() {
         $('.link_cuenta a').css('color','#036975');
         $(this).css('color','#85A796');
     });
+    //Validacion CambiarContraseña
+    $('.cuerpo').on('keyup', '#passwordcheck', function(event){
+        var passwordNew = $('#passwordnew').val();
+        var passwordCheck = $('#passwordcheck').val();
+        if(passwordnew.value != passwordcheck.value)
+        {
+            $("#passwordcheck").css("background-color","#ebccd1" ); //El input se pone rojo
+            return false;
+        }
+        else if(passwordnew.value == passwordcheck.value)
+        {
+            $("#passwordcheck").css("background-color","#d6f9b6"); //El input se ponen verde
+            $("#mensaje3").fadeOut();
+            return false;
+        }
+    });
+
+    /*Funcion Cambiar contrasenia*/
+    $('.cuerpo').on('click', '#btn-cambiar-contrasenia', function(){
+        var url = 'usuario/cambiar';
+        console.log(url);
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'JSON',
+            data: $('#form-cambiar-contrasenia').serialize(),
+            success: function(data){
+
+                if(data.estado=="error"){
+                    $('#msg-errores').append(data.errores);
+                }else if(data.estado=="success"){
+                    //DO ANOTHER THING
+                }
+            }
+        });
+        return false;
+    });
 
 
 
@@ -76,21 +113,13 @@ $(document).ready(function() {
     $('#recuperar').click(function(event){
         event.preventDefault();
         link('welcome/recuperar', '.cuerpo');
-    })
+    });
     $('#cambiar').click(function(event){
         event.preventDefault();
         link('welcome/cambiar', '.cuerpo');
-    })
+    });
 
-
-
-});
-
-
-
-
-
-function link(url, update) {
+    function link(url, update) {
     $.ajax({
         url: url,
         type: 'POST',
@@ -103,3 +132,9 @@ function link(url, update) {
     });
 
 }
+});
+
+
+
+
+

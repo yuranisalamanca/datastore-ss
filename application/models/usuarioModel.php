@@ -17,7 +17,7 @@
 		//$this->db->query($query, array($usuario, $contrasenia));
 
 		$query = $this->db->get_where('users', array('usuario'=>$usuario, 'contrasenia'=>$contrasenia));
-		if($query->num_rows>0){
+		if($query->num_rows()>0){
 			$row = $query->row();
 			setcookie("val[name]", $row->nombre);
 			setcookie("val[apellido]",$row->apellido);
@@ -33,11 +33,22 @@
 
 	public function recuperar($email){
 		$query = $this->db->get_where('users', array('email' => $email));
-		if($query->num_rows>0){
+		if($query->num_rows()>0){
 			$row = $query->row();
 			return $row;
 		}else{
 			return false;
+		}
+	}
+
+	public function cambiarContrasenia($email, $passwordacual, $newpassword){
+		$query = $this->db->get_where('users', array('email'=>$email, 'contrasenia'=>$passwordacual));
+		if($query->num_rows()>0){
+			$data = array('contrasenia'=>$newpassword);
+			$this->db->where('email',$email);
+			return $this->db->update('users',$data);
+		}else{
+			return null;
 		}
 	}
 
