@@ -110,14 +110,22 @@ $(document).ready(function() {
         event.preventDefault();
         link('welcome/cuenta', '.cuerpo');
     });
+
     $('#recuperar').click(function(event){
         event.preventDefault();
         link('welcome/recuperar', '.cuerpo');
     });
+
     $('#cambiar').click(function(event){
         event.preventDefault();
         link('welcome/cambiar', '.cuerpo');
     });
+
+
+
+
+}
+);
 
     function link(url, update) {
     $.ajax({
@@ -129,12 +137,6 @@ $(document).ready(function() {
             $(update).html(respuesta);
             
         }
-    });
-
-}
-});
-
-
-
+    });}
 
 

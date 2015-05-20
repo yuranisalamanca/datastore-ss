@@ -193,6 +193,7 @@
 			}
 
 			$this->dbxClient = new dbx\Client($accessToken, "Datastoress");
+			print_r($accessToken);
 			$_SESSION['dbxClient'] = $this->dbxClient;
 			//setcookie("val[dbxClient]", $this->dbxClient);
 			$accountInfo = $this->dbxClient->getAccountInfo();
@@ -235,6 +236,13 @@
 			$fileMetadata = $this->dbxClient->getFile("/Comenzar.pdf", $f);
 			fclose($f);
 			print_r($fileMetadata);
+		}
+
+		public function cliente()
+		{
+			$this->dbxClient = new dbx\Client("S776D67kj0QAAAAAAACYfYHv93fohJ2b0pNXs2O_ofCs4Ky2AcYLA3U51ulCv2Sl", "Datastoress");
+			$accountInfo = $this->dbxClient->getAccountInfo();
+			print_r($accountInfo);
 		}
 	}
  ?>
