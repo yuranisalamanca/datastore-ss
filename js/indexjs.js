@@ -66,7 +66,9 @@ $(document).ready(function() {
         $('.link_cuenta a').css('color','#036975');
         $(this).css('color','#85A796');
     });
-    //Validacion CambiarContraseña
+
+
+    //Validacion de la funcion CambiarContraseña
     $('.cuerpo').on('keyup', '#passwordcheck', function(event){
         var passwordNew = $('#passwordnew').val();
         var passwordCheck = $('#passwordcheck').val();
@@ -83,10 +85,21 @@ $(document).ready(function() {
         }
     });
 
-    /*Funcion Cambiar contrasenia*/
+    /*Evento para cerrar o desaparecer el div de excepciones*/
+    $('.cuerpo').on('click','#close-exception', function(){
+       $('#msg-errores').hide(10);
+    });
+     
+
+     /*Funcion Cambiar contrasenia*/
     $('.cuerpo').on('click', '#btn-cambiar-contrasenia', function(){
+
+        if (document.getElementById( "close-exception" )) {
+            $('#msg-errores').text('');
+            $('#btn-close-exception').remove();
+        }
+
         var url = 'usuario/cambiar';
-        console.log(url);
         $.ajax({
             type: 'POST',
             url: url,
@@ -95,9 +108,24 @@ $(document).ready(function() {
             success: function(data){
 
                 if(data.estado=="error"){
+                    $('#msg-errores').css('display','');
+                    $('#msg-errores').attr({'class':"alert alert-danger alert-dismissible"});
+                    $('#msg-errores').append($('<button>').
+                        attr("type","button").
+                        attr("class","close").
+                        attr("data-dismiss", "alert").
+                        attr("aria-label", "Close").
+                        attr("id", "btn-close-exception"));
+
+                    $('#btn-close-exception').append($('<span>&times;</span>').
+                        attr("aria-hidden", "true").
+                        attr("id","close-exception"));
+
                     $('#msg-errores').append(data.errores);
+
                 }else if(data.estado=="success"){
-                    //DO ANOTHER THING
+                    window.location.href = "";
+                    alert(data.mensaje);
                 }
             }
         });

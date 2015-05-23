@@ -16,11 +16,10 @@
 	<input type="button" class="button" id="btn-cambiar-contrasenia" value="Cambiar Contrase&ntilde;a">
 	
 	
-	<div id="msg-errores" class="alert alert-danger" role="alert">
-		
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-		</button>
+	<div id="msg-errores" role="alert">
+		<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true" id="close-exception">&times;</span>
+		</button>-->
 	</div>
 	
 </fieldset>

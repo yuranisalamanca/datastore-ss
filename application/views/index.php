@@ -25,10 +25,10 @@
 				
 				<?php if (isset($_POST['mensajeerror'])){ ?>
 				
-				<div class="alert alert-danger" role="alert">
+				<div class="alert alert-danger" id="msg-errores" role="alert">
 					<?php echo $_POST['mensajeerror']; ?>
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	  					<span aria-hidden="true">&times;</span>
+	  					<span aria-hidden="true" id="close-exception">&times;</span>
 					</button>
 				</div>
 				<?php } ?>
