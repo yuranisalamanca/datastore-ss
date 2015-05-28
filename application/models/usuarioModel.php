@@ -60,10 +60,7 @@
 			'usuario'=>$usuario,
 			'contrasenia'=>$contrasenia
 			);
-		return $this->db->insert('users',$data);
+		echo $this->db->insert('users',$data);
 	}
-
-	
-	
-	}
+}
  ?>
