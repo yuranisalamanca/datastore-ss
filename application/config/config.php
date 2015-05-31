@@ -16,8 +16,8 @@
 | environments.
 |
 */
-/*$config['base_url'] = 'http://datastoress.esy.es/datastoress/';*/
-$config['base_url'] = 'http://localhost:8090/datastoress/';
+$config['base_url'] = 'http://datastoress.esy.es/datastoress/';
+/*$config['base_url'] = 'http://localhost:8090/datastoress/';*/
 
 /*
 |--------------------------------------------------------------------------
