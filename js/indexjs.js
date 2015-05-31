@@ -132,7 +132,12 @@ $(document).ready(function() {
         return false;
     });
 
+    //Prueba Funcion Validar Dropbox 
 
+    $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
+        //alert("Hola");
+        window.open()
+    })
 
     $('#registrar').click(function(event) {
         event.preventDefault();

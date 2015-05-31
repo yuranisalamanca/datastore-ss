@@ -23,6 +23,6 @@
 			</label>
 		</div>
 	</div>
-	<input type="submit" class="buttonCrearCuenta" value="Guardar Información Dropbox">
+	<input type="submit" id="btn-CrearDropbox" class="buttonCrearCuenta" value="Guardar Información Dropbox">
 </form>
 
