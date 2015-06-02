@@ -6,18 +6,11 @@
 	</div>
 
 	<div class="cuerpoCuenta">
-		<form method="post" action="<?php echo site_url('usuario/createUser') ?>" class="cuentaForm">
+		<form method="post" class="cuentaForm" id="form-crear-usuario">
 			<fieldset>
 				<legend>Crea tu cuenta</legend>
-				<?php if (isset($_POST['exitoAgregar'])){ ?>
-			
-				<div class="alert alert-danger" role="alert">
-					<?php echo $_POST['exitoAgregar']; ?>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-	  					<span aria-hidden="true">&times;</span>
-					</button>
+				<div id="msg-errores" role="alert">
 				</div>
-				<?php } ?>
 				
 				<div class="generalCuenta">
 					<div class="leftCuenta">
@@ -47,7 +40,7 @@
 					</label>
 					</div>
 				</div>
-				<input type="submit" class="buttonCrearCuenta" value="Crear cuenta">
+				<input type="submit" id="btn-crear-cuenta" class="buttonCrearCuenta" value="Crear cuenta">
 			</fieldset>
 		</form>
 			

@@ -32,41 +32,6 @@ function cambiarTab(tabs,tabActual){
 
 
 $(document).ready(function() {
-    $('.listabarraprincipal').on('click', '.link_cuenta', function(event) {
-        if ($('.active').length) {
-            $('.link_cuenta').removeClass('active');
-        }
-
-        $(this).addClass('active');
-        $('.link_cuenta a').css('color','#85A796');
-    });
-
-    $('.cuerpo').on('click', '#infoDrive', function(event) {
-        event.preventDefault();
-        link('welcome/drive', '.cuerpoCuenta');
-        $('.link_cuenta a').css('color','#036975');
-        $(this).css('color','#85A796');
-
-    });
-    $('.cuerpo').on('click', '#infoDropbox', function(event) {
-        event.preventDefault();
-        link('welcome/dropbox', '.cuerpoCuenta');
-        $('.link_cuenta a').css('color','#036975');
-        $(this).css('color','#85A796');
-    });
-    $('.cuerpo').on('click', '#infoMega', function(event) {
-        event.preventDefault();
-        link('welcome/mega', '.cuerpoCuenta');
-        $('.link_cuenta a').css('color','#036975');
-        $(this).css('color','#85A796');
-    });
-    $('.cuerpo').on('click', '#info', function(event) {
-        event.preventDefault();
-        link('welcome/general', '.cuerpoCuenta');
-        $('.link_cuenta a').css('color','#036975');
-        $(this).css('color','#85A796');
-    });
-
 
     //Validacion de la funcion CambiarContraseña
     $('.cuerpo').on('keyup', '#passwordcheck', function(event){
@@ -88,6 +53,39 @@ $(document).ready(function() {
     /*Evento para cerrar o desaparecer el div de excepciones*/
     $('.cuerpo').on('click','#close-exception', function(){
        $('#msg-errores').hide(10);
+    });
+
+     //Funcion Recuperar
+    $('.cuerpo').on('click', '#btn-recuperar', function(){
+        var url = 'usuario/recuperar';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'JSON',
+            data: $('#form-recuperar-contrasenia').serialize(),
+            success: function(data){
+                if(data.estado == 'success'){
+                    window.location.href = "";
+                    alert(data.mensaje);
+                }else if(data.estado == 'error'){
+                    $('#msg-errores').css('display','');
+                    $('#msg-errores').attr({'class':"alert alert-danger alert-dismissible"});
+                    $('#msg-errores').append($('<button>').
+                        attr("type","button").
+                        attr("class","close").
+                        attr("data-dismiss", "alert").
+                        attr("aria-label", "Close").
+                        attr("id", "btn-close-exception"));
+
+                    $('#btn-close-exception').append($('<span>&times;</span>').
+                        attr("aria-hidden", "true").
+                        attr("id","close-exception"));
+
+                    $('#msg-errores').append(data.errores);
+                }
+            } 
+        });
+        return false;
     });
      
 
@@ -136,7 +134,7 @@ $(document).ready(function() {
 
     $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
         //alert("Hola");
-        var url = 'usuario/cliente';
+        var url = 'usuario/imprimirDropbox';
         $.ajax({
             type: 'POST',
             url: url,

@@ -41,6 +41,17 @@
 		}
 	}
 
+	/*Busca un usuario de acuerdo al nickname de su cuenta*/
+	public function searchUserByUsername($username){
+		$query = $this->db->get_where('users', array('usuario' => $username));
+		if($query->num_rows()>0){
+			$row = $query->row();
+			return $row;
+		}else{
+			return false;
+		}
+	}
+
 	public function cambiarContrasenia($email, $passwordacual, $newpassword){
 		$query = $this->db->get_where('users', array('email'=>$email, 'contrasenia'=>$passwordacual));
 		if($query->num_rows()>0){
@@ -52,7 +63,7 @@
 		}
 	}
 
-	public function createUser($nombre, $apellido, $email, $usuario, $contrasenia){
+	public function createuser($nombre, $apellido, $email, $usuario, $contrasenia){
 		$data = array(
 			'nombre'=>$nombre,
 			'apellido'=>$apellido,
@@ -60,7 +71,7 @@
 			'usuario'=>$usuario,
 			'contrasenia'=>$contrasenia
 			);
-		echo $this->db->insert('users',$data);
+		return $this->db->insert('users',$data);
 	}
 
 	public function updateUserByEmail($email, $email_dropbox, $contrasenia_dropbox, $clave_dropbox){
