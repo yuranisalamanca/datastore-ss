@@ -136,8 +136,21 @@ $(document).ready(function() {
 
     $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
         //alert("Hola");
-        window.open()
-    })
+        var url = 'usuario/cliente';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            success: function(){
+
+                
+                window.location.href = "";
+                alert("Su información ha sido guardada");
+                
+
+        }
+    });
+        return false;
+    });
 
     $('#registrar').click(function(event) {
         event.preventDefault();
