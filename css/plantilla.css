@@ -195,6 +195,7 @@ fieldset {
 	display: block;
 	text-align: center;
 	margin-bottom: 1%;
+	margin: 0 auto;
 }
 .infoDropBox .logos img, .infoDrive .logos img, .infoMega .logos img {
 	width: 50%;
@@ -208,10 +209,11 @@ fieldset {
 .buttonCrearCuenta{
 	padding-right: 0px;
 	padding-left: 0px;
-	width: 22%;
+	width: 35%;
 	display: block;
 	margin: 0 auto;
 	height: 40px;
+	margin-bottom: 3%;
 	
 }
 #pestanas {
