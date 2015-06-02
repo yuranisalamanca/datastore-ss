@@ -54,6 +54,44 @@ $(document).ready(function() {
     $('.cuerpo').on('click','#close-exception', function(){
        $('#msg-errores').hide(10);
     });
+
+    /*Funcion agregar cuenta de un usuario*/
+    $('.cuerpo').on('click', '#btn-crear-cuenta', function(){
+        var url = 
+    });
+
+     //Funcion Recuperar
+    $('.cuerpo').on('click', '#btn-recuperar', function(){
+        var url = 'usuario/recuperar';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'JSON',
+            data: $('#form-recuperar-contrasenia').serialize(),
+            success: function(data){
+                if(data.estado == 'success'){
+                    window.location.href = "";
+                    alert(data.mensaje);
+                }else if(data.estado == 'error'){
+                    $('#msg-errores').css('display','');
+                    $('#msg-errores').attr({'class':"alert alert-danger alert-dismissible"});
+                    $('#msg-errores').append($('<button>').
+                        attr("type","button").
+                        attr("class","close").
+                        attr("data-dismiss", "alert").
+                        attr("aria-label", "Close").
+                        attr("id", "btn-close-exception"));
+
+                    $('#btn-close-exception').append($('<span>&times;</span>').
+                        attr("aria-hidden", "true").
+                        attr("id","close-exception"));
+
+                    $('#msg-errores').append(data.errores);
+                }
+            } 
+        });
+        return false;
+    });
      
 
      /*Funcion Cambiar contrasenia*/

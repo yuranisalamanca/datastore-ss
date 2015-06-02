@@ -1,5 +1,5 @@
 <?php 
-	require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
+	//require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
 	use \Dropbox as dbx;
 	/**
 	* 
@@ -44,40 +44,20 @@
 				$usuario=$this->usuarioModel->recuperar($email);
 				if($usuario!=null){
 					$this->load->library('email');
-					/*$config['protocol'] = 'smtp';
-					$config["smtp_host"] = 'smtp.gmail.com';
-					$config["smtp_user"] = 'yuranisalamanca@gmail.com';
-					$config["smtp_pass"] = '';
-					$config['charset'] = 'utf-8';
-					$config['wordwrap'] = TRUE;
-
-					$config['validate'] = true;
-					$this->email->initialize($config);*/
-
-
-
-					$this->email->from('alejas_024@hotmail.com', 'Datastoress');
+					$this->email->from('info@datastoress.esy.es', 'Datastoress');
 					$this->email->to($usuario->email);  
 
-					$this->email->subject('Correo de Prueba');
-					$this->email->message('Probando la clase email');	
-
+					$this->email->subject('Recuperacion de contraseña');
+					$this->email->message('Hola '.$usuario->usuario.', su contraseña es: '.$usuario->contrasenia);	
 					$this->email->send();
-					echo $this->email->print_debugger();
 
-
-					$_POST['recuperar'] = "Los datos se han enviado al correo".$usuario->email;
-					$this->load->view('header');
-					$this->load->view('recuperar');
-					$this->load->view('footer');
+					$mensaje['estado']='success';
+					$mensaje['mensaje']='Los datos se han enviado al correo '.$usuario->email;
 				}else{
-					$_POST['recuperar'] = "El correo electronico no existe";
-
-					$this->load->view('header');
-					$this->load->view('recuperar');
-					$this->load->view('footer');
-
+					$mensaje['estado']='error';
+					$mensaje['errores']='El correo electronico ingresado no existe';
 				}
+				echo json_encode($mensaje);
 			}
 		}
 
