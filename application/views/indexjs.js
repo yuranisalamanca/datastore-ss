@@ -55,44 +55,6 @@ $(document).ready(function() {
        $('#msg-errores').hide(10);
     });
 
-    /*Funcion agregar cuenta de un usuario*/
-    $('.cuerpo').on('click', '#btn-crear-cuenta', function(){
-        if (document.getElementById( "close-exception" )) {
-            $('#msg-errores').text('');
-            $('#btn-close-exception').remove();
-        }
-        
-        var url = 'usuario/createuser';
-        $.ajax({
-            type: 'POST',
-            url: url,
-            dataType: 'JSON',
-            data: $('#form-crear-usuario').serialize(),
-            success: function(data){
-                if(data.estado == 'success'){
-                    window.location.href = "";
-                    alert(data.mensaje);
-                }else if(data.estado == 'error'){
-                    $('#msg-errores').css('display','');
-                    $('#msg-errores').attr({'class':"alert alert-danger alert-dismissible"});
-                    $('#msg-errores').append($('<button>').
-                        attr("type","button").
-                        attr("class","close").
-                        attr("data-dismiss", "alert").
-                        attr("aria-label", "Close").
-                        attr("id", "btn-close-exception"));
-
-                    $('#btn-close-exception').append($('<span>&times;</span>').
-                        attr("aria-hidden", "true").
-                        attr("id","close-exception"));
-
-                    $('#msg-errores').append(data.errores);
-                }
-            }
-        });
-        return false;
-    });
-
      //Funcion Recuperar
     $('.cuerpo').on('click', '#btn-recuperar', function(){
         var url = 'usuario/recuperar';
@@ -170,7 +132,7 @@ $(document).ready(function() {
 
     //Prueba Funcion Validar Dropbox 
 
-    $('.cuerpo').on( 'click', '#validarDropbox', function () {
+    $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
         //alert("Hola");
         var url = 'usuario/imprimirDropbox';
         $.ajax({

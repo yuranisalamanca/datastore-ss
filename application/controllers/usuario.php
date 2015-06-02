@@ -1,5 +1,5 @@
 <?php 
-	require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
+	//require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
 	use \Dropbox as dbx;
 	/**
 	* 
@@ -44,40 +44,20 @@
 				$usuario=$this->usuarioModel->recuperar($email);
 				if($usuario!=null){
 					$this->load->library('email');
-					/*$config['protocol'] = 'smtp';
-					$config["smtp_host"] = 'smtp.gmail.com';
-					$config["smtp_user"] = 'yuranisalamanca@gmail.com';
-					$config["smtp_pass"] = '';
-					$config['charset'] = 'utf-8';
-					$config['wordwrap'] = TRUE;
-
-					$config['validate'] = true;
-					$this->email->initialize($config);*/
-
-
-
-					$this->email->from('alejas_024@hotmail.com', 'Datastoress');
+					$this->email->from('info@datastoress.esy.es', 'Datastoress');
 					$this->email->to($usuario->email);  
 
-					$this->email->subject('Correo de Prueba');
-					$this->email->message('Probando la clase email');	
-
+					$this->email->subject('Recuperacion de contraseña');
+					$this->email->message('Hola '.$usuario->usuario.', su contraseña es: '.$usuario->contrasenia);	
 					$this->email->send();
-					echo $this->email->print_debugger();
 
-
-					$_POST['recuperar'] = "Los datos se han enviado al correo".$usuario->email;
-					$this->load->view('header');
-					$this->load->view('recuperar');
-					$this->load->view('footer');
+					$mensaje['estado']='success';
+					$mensaje['mensaje']='Los datos se han enviado al correo '.$usuario->email;
 				}else{
-					$_POST['recuperar'] = "El correo electronico no existe";
-
-					$this->load->view('header');
-					$this->load->view('recuperar');
-					$this->load->view('footer');
-
+					$mensaje['estado']='error';
+					$mensaje['errores']='El correo electronico ingresado no existe';
 				}
+				echo json_encode($mensaje);
 			}
 		}
 
@@ -120,7 +100,7 @@
 		/*
 			Funcion que permite crear la informacion general de una cuenta Datastore'SS
 		*/
-		public function createUser(){
+		public function createuser(){
 			$this->load->model('usuarioModel');
 			if($this->input->post('nombreU')!=null && $this->input->post('apellidoU')!=null
 				&&$this->input->post('correoU')!=null && $this->input->post('usuarioU')!=null
@@ -128,30 +108,44 @@
 					
 					$contrasenia = $this->input->post('contraseniaU');
 					$confirmar = $this->input->post('contraseniaConfirmU');
+					$email = $this->input->post('correoU');
+					$usuario = $this->input->post('usuarioU');
+
 					$mensaje['estado'] =  "error";
 					
-					if($contrasenia!=$confirmar){
-						$mensaje['errores']= 'Verifique la nueva contraseña';
-					}else{					
-						$nombre  = $this->input->post('nombreU');
-						$apellido = $this->input->post('apellidoU');
-						$email = $this->input->post('correoU');
-						$usuario = $this->input->post('contraseniaU');
+					$usuarioMail=$this->usuarioModel->recuperar($email);
+					$usuarioNick=$this->usuarioModel->searchUserByUsername($usuario);
 
-						SESSION_START();
-						$_SESSION['email'] = $email;
+					if($usuarioMail== null){
+						if($usuarioNick == null){
+							if($contrasenia!=$confirmar){
+								$mensaje['errores']= 'Verifique la nueva contraseña';
+							}else{					
+								$nombre  = $this->input->post('nombreU');
+								$apellido = $this->input->post('apellidoU');
+								
 
-						$usuario=$this->usuarioModel->createUser($nombre, $apellido,$email,$usuario,$contrasenia);
-						
+								SESSION_START();
+								$_SESSION['email'] = $email;
 
-
-						if($usuario==null){
-							//TODO - No se pudo agregar el usuario				
+								$usuario=$this->usuarioModel->createuser($nombre, $apellido,$email,$usuario,$contrasenia);
+								
+								if($usuario==null){
+									$mensaje['errores']= 'No se pudo agregar el usuario';
+								}else{
+									$mensaje['estado'] =  "success";
+									$mensaje['mensaje'] ="El usuario se agrego exitosamente";
+								}
+							}
 						}else{
-							//TODO- El usuario se agrego exitosamente
+							$mensaje['estado'] =  "error";
+							$mensaje['errores'] =  "El nick ingresado ya existe";
+							//El nick ingresado ya existe		
 						}
-					}
-					
+					}else{
+						$mensaje['errores'] =  "El correo ingresado ya existe";
+					}	
+					echo json_encode($mensaje);				
 			}
 
 		}
