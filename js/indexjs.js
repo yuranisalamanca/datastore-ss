@@ -99,7 +99,7 @@ $(document).ready(function() {
 
     //Prueba Funcion Validar Dropbox 
 
-    $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
+    $('.cuerpo').on( 'click', '#validarDropbox', function () {
         //alert("Hola");
         var url = 'usuario/imprimirDropbox';
         $.ajax({
