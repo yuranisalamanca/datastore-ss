@@ -137,8 +137,50 @@
 						$apellido = $this->input->post('apellidoU');
 						$email = $this->input->post('correoU');
 						$usuario = $this->input->post('contraseniaU');
+
+						SESSION_START();
+						$_SESSION['email'] = $email;
+
 						$usuario=$this->usuarioModel->createUser($nombre, $apellido,$email,$usuario,$contrasenia);
 						
+
+
+						if($usuario==null){
+							//TODO - No se pudo agregar el usuario				
+						}else{
+							//TODO- El usuario se agrego exitosamente
+						}
+					}
+					
+			}
+
+		}
+
+		public function agregarDropbox(){
+			$this->load->model('usuarioModel');
+			if($this->input->post('nombreU')!=null && $this->input->post('apellidoU')!=null
+				&&$this->input->post('correoU')!=null && $this->input->post('usuarioU')!=null
+				&&$this->input->post('contraseniaU')!=null && $this->input->post('contraseniaConfirmU')!=null){
+					
+					$contrasenia = $this->input->post('contraseniaU');
+					$confirmar = $this->input->post('contraseniaConfirmU');
+					$mensaje['estado'] =  "error";
+					
+					if($contrasenia!=$confirmar){
+						$mensaje['errores']= 'Verifique la nueva contraseña';
+					}else{					
+						$nombre  = $this->input->post('nombreU');
+						$apellido = $this->input->post('apellidoU');
+						$email = $this->input->post('correoU');
+						$usuario = $this->input->post('contraseniaU');
+
+						SESSION_START();
+						$_SESSION['email'] = $email;
+
+						$usuario=$this->usuarioModel->createUser($nombre, $apellido,$email,$usuario,$contrasenia);
+						
+
+
 						if($usuario==null){
 							//TODO - No se pudo agregar el usuario				
 						}else{

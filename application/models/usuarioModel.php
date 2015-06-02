@@ -62,5 +62,17 @@
 			);
 		echo $this->db->insert('users',$data);
 	}
+
+	public function updateUserByEmail($email, $email_dropbox, $contrasenia_dropbox, $clave_dropbox){
+
+		$data = array(
+			
+			'email_dropbox'=>$email_dropbox,
+			'contrasenia_dropbox'=>$contrasenia_dropbox,
+			'clave_dropbox'=>$clave_dropbox
+			);
+		$this->db->where('email', $email);
+		echo $this->db->update('users',$data);
+	}
 }
  ?>
