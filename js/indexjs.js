@@ -101,7 +101,7 @@ $(document).ready(function() {
 
     $('.cuerpo').on( 'click', '#btn-CrearDropbox', function () {
         //alert("Hola");
-        var url = 'usuario/cliente';
+        var url = 'usuario/imprimirDropbox';
         $.ajax({
             type: 'POST',
             url: url,
