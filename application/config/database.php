@@ -48,14 +48,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-/*$db['default']['hostname'] = 'mysql.hostinger.es';
+$db['default']['hostname'] = 'mysql.hostinger.es';
 $db['default']['username'] = 'u775156752_jy';
 $db['default']['password'] = 'datastoressjy';
-$db['default']['database'] = 'u775156752_data';*/
-$db['default']['hostname'] = 'localhost';
+$db['default']['database'] = 'u775156752_data';
+/*$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'jy_user';
 $db['default']['password'] = 'datastoress';
-$db['default']['database'] = 'datastoress';
+$db['default']['database'] = 'datastoress';*/
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
