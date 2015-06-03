@@ -1,5 +1,5 @@
 <?php 
-	//require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
+	require_once "/application/libraries/dropbox-sdk/Dropbox/autoload.php";
 	use \Dropbox as dbx;
 	/**
 	* 
@@ -23,8 +23,15 @@
 				if($usuario!=null){
 					//$this->load->model('dropboxModel');
 					//$this->dropboxModel->autentificar();
+					SESSION_START();
+					$email = $_SESSION['email'];
+					$dropboxToken = $this->usuarioModel->getDropboxToken($email);
+
+					$this->dbxClient = new dbx\Client($dropboxToken, "Datastoress");
+					$arrayData = array('dbxClient' => $this->dbxClient, 'dropboxToken' => $dropboxToken);
+
 					$this->load->view('header');
-					$this->load->view('principal1');
+					$this->load->view('principal1', $arrayData);
 					$this->load->view('footer');		
 				}else{
 					$_POST['mensajeerror'] = "Por favor verifique la contrase&ntilde;a o el nombre de usuario";
@@ -207,6 +214,7 @@
 			//echo "<br>";
 			try {
 				//print_r($_GET);
+				//print_r($_GET['code']);
 			   list($accessToken, $userId, $urlState) = $getWebAuth->finish($_GET);
 			   assert($urlState === null);  // Since we didn't pass anything in start()
 			}
@@ -232,9 +240,15 @@
 			   error_log("/dropbox-auth-finish: error communicating with Dropbox API: " . $ex->getMessage());
 			}
 
+			$this->load->model('usuarioModel');
+			$email = $_SESSION['email'];
+			//$email->$this->session->userdata('email');
+			$token = $accessToken;
+			
+
 			$this->dbxClient = new dbx\Client($accessToken, "Datastoress");
 			print_r($accessToken);
-			$_SESSION['dbxClient'] = $this->dbxClient;
+			//$_SESSION['dbxClient'] = $this->dbxClient;
 			//setcookie("val[dbxClient]", $this->dbxClient);
 			$accountInfo = $this->dbxClient->getAccountInfo();
 			print_r($accountInfo);
@@ -264,23 +278,27 @@
 			   print_r($value['path']);
 			   echo "<br>";
 			}
+			$this->usuarioModel->updateUserByEmail($email, $token);
 		}
 
-		public function descargar()
+		public function descargar($archivo)
 		{
 			SESSION_START();
-			print_r($_SESSION['dbxClient']);
-			$this->dbxClient = $_SESSION['dbxClient'];
-			$f = fopen("C:\Comenzar.pdf", "w+b");
+			$email = $_SESSION['email'];
+			$this->load->model('usuarioModel');
+			$dropboxToken = $this->usuarioModel->getDropboxToken($email);
 
-			$fileMetadata = $this->dbxClient->getFile("/Comenzar.pdf", $f);
+			$this->dbxClient = new dbx\Client($dropboxToken, "Datastoress");
+			$f = fopen("C:\ ".$archivo, "w+b");
+
+			$fileMetadata = $this->dbxClient->getFile("/". $archivo, $f);
 			fclose($f);
 			print_r($fileMetadata);
 		}
 
 		public function cliente()
 		{
-			$this->dbxClient = new dbx\Client("S776D67kj0QAAAAAAACYfYHv93fohJ2b0pNXs2O_ofCs4Ky2AcYLA3U51ulCv2Sl", "Datastoress");
+			$this->dbxClient = new dbx\Client("S776D67kj0QAAAAAAACZpat6xREDhu6D3qUpGcVFzhUlxaEIgEubG_DiUkxLSggV", "Datastoress");
 			$accountInfo = $this->dbxClient->getAccountInfo();
 			print_r($accountInfo);
 		}

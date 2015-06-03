@@ -74,16 +74,24 @@
 		return $this->db->insert('users',$data);
 	}
 
-	public function updateUserByEmail($email, $email_dropbox, $contrasenia_dropbox, $clave_dropbox){
+	public function updateUserByEmail($email, $clave_dropbox){
 
 		$data = array(
 			
-			'email_dropbox'=>$email_dropbox,
-			'contrasenia_dropbox'=>$contrasenia_dropbox,
 			'clave_dropbox'=>$clave_dropbox
 			);
 		$this->db->where('email', $email);
 		echo $this->db->update('users',$data);
+	}
+
+	public function getDropboxToken($email)
+	{
+		$this->db->select('clave_dropbox');
+		$this->db->where('email', $email);
+		$this->db->from('users');
+		$query = $this->db->get();
+		$result=$query->row();
+		return $result->clave_dropbox;
 	}
 }
  ?>
