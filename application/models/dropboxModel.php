@@ -36,7 +36,9 @@
 
 		   	$_SESSION['WebAuth'] = $getWebAuth;
 		   	$authorizeUrl = $getWebAuth->start();
-			header("Location: $authorizeUrl");
+		   	$response = array('url' => $authorizeUrl);
+		   	echo json_encode($response);
+			//header("Location: $authorizeUrl");
 		}
 
 		public function cargarArchivos(){

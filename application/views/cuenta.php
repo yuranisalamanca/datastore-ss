@@ -60,12 +60,12 @@
 			<fieldset>
 				<div class="infoDropBox">
 					<div class="logos">
-						<h3 class="tituloEmpresa">Drive</h3>
+						<h3 class="tituloEmpresa">Dropbox</h3>
 						<img src="<?php echo base_url(); ?>fonts/img/dropbox-logo.png">
 					</div>
 				</div>
 			</fieldset>
-			<input type="submit" class="buttonCrearCuenta" value="Aceptar Terminos y Condiciones en Dropbox">
+			<input id="validarDropbox" type="submit" class="buttonCrearCuenta" value="Aceptar Terminos y Condiciones en Dropbox">
 		</form>
 
 		<form method="post" class="cuentaForm">

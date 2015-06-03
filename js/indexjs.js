@@ -70,7 +70,7 @@ $(document).ready(function() {
             data: $('#form-crear-usuario').serialize(),
             success: function(data){
                 if(data.estado == 'success'){
-                    window.location.href = "";
+                    //window.location.href = "";
                     alert(data.mensaje);
                 }else if(data.estado == 'error'){
                     $('#msg-errores').css('display','');
@@ -175,12 +175,14 @@ $(document).ready(function() {
         var url = 'usuario/imprimirDropbox';
         $.ajax({
             type: 'POST',
+            dataType: 'JSON',
             url: url,
-            success: function(){
+            success: function(data){
 
+                alert("Sera redirigido a una pagina para validar Dropbox con nuestra aplicación");
+                window.open(data.url);
                 
-                window.location.href = "";
-                alert("Su información ha sido guardada");
+                //window.location.href = "";
                 
 
         }

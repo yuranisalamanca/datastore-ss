@@ -51,13 +51,15 @@
 	            				if(!isset($_COOKIE["val"])){
 									echo '';
 								}else{
-									SESSION_START();
-									$dbxClient = $_SESSION['dbxClient'];
+									//SESSION_START();
+									//$dbxClient = $_SESSION['dbxClient'];
 									//$dbxClient = $_COOKIE['val']['dbxClient'];						
 								}
+								//var_dump($dbxClient);
+								//var_dump($dropboxToken);
 	            				$metaData = $dbxClient->getMetadataWithChildren("/");;
 	            				foreach ($metaData['contents'] as $value) {?>
-	            				<li><a href='<?php echo site_url('usuario/descargar') ?>'><span><?php print_r($value['path']); echo "<br>"; ?></span></a></li>
+	            				<li><a href="<?php echo site_url('usuario/descargar'.$value['path']) ?>"><span><?php print_r(substr($value['path'], 1)); echo "<br>"; ?></span></a></li>
 	            				<?php } ?>
 	            				<!--<li>
 	            					<img src="<?php echo base_url(); ?>fonts/img/descargar.png" />
